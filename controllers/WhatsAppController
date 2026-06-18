@@ -1,0 +1,83 @@
+<?php
+
+class WhatsAppController {
+
+    private static $apiUrl   = "https://graph.facebook.com/v25.0/";
+    private static $phoneId  = "1132585386585238";   // De Meta Business
+    private static $token    = "EAAVIaiawwSMBRScbyyVdxXIz4LU0wwkxgxMTmZBaeoENFwTJwZAk0fSeDZCfsG1Ohki9ZBBPHRUUQTgyanaB7XhN8WisTV6flqrsexUcCbpuueskJEYMRtDGFFlLw4apKPXnRvfgdAZAb7qLSHJGmFuR7xWhfdpijXgbunIx34qm2s6u2qqmVMDPAZAyvZBrZC10MxVZCNrTRGa8N69CDfJMuLMk1krm3529b7HloDeQSc9Ba23TOkD0D4EEr8ycAIyZCakxbFIqo2kAZB7oLZBK0J9P";       // Token permanente
+
+    /**
+     * Envía mensaje de confirmación de reserva por WhatsApp
+     *
+     * @param string $phone     Número destino (formato internacional sin + ej: 573001234567)
+     * @param array  $bookData  Datos de la reserva
+     * @return object
+     */
+    public static function sendBookingConfirmation(string $phone, array $bookData): object {
+
+        $phone = self::formatPhone($phone);
+
+        $body = [
+            "messaging_product" => "whatsapp",
+            "to"                => $phone,
+            "type"              => "text",
+            "text"              => [
+                "body" => self::buildMessage($bookData)
+            ]
+        ];
+
+        $ch = curl_init(self::$apiUrl . self::$phoneId . "/messages");
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => json_encode($body),
+            CURLOPT_HTTPHEADER     => [
+                "Authorization: Bearer " . self::$token,
+                "Content-Type: application/json"
+            ]
+        ]);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        return (object)[
+            "status"   => $httpCode,
+            "response" => json_decode($response)
+        ];
+    }
+
+    /**
+     * Construye el mensaje de confirmación
+     */
+    private static function buildMessage(array $d): string {
+
+        return "✅ *Confirmación de Reserva*\n\n"
+             . "👤 *Cliente:* {$d['client']}\n"
+             . "📅 *Fecha:* {$d['date']}\n"
+             . "🕐 *Hora:* {$d['time']}\n"
+             . "💆 *Especialista:* {$d['specialist']}\n"
+             . "🔢 *N° Reserva:* #{$d['num']}\n\n"
+             . "Si necesitas cancelar o modificar tu cita, comunícate con nosotros.\n"
+             . "¡Te esperamos! 🙏";
+    }
+
+    /**
+     * Normaliza el número al formato internacional (Colombia por defecto)
+     */
+    private static function formatPhone(string $phone): string {
+
+        // Elimina espacios, guiones, paréntesis
+        $phone = preg_replace('/[\s\-\(\)\+]/', '', $phone);
+
+        // Si empieza con 0, lo quita
+        $phone = ltrim($phone, '0');
+
+        // Si no tiene código de país, asume Colombia (+57)
+        if (strlen($phone) === 10 && $phone[0] === '3') {
+            $phone = '57' . $phone;
+        }
+
+        return $phone;
+    }
+}

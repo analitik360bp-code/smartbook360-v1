@@ -1,0 +1,14 @@
+{
+    "host": "ftp.tutorialesatualcance.com",
+    "port": 21, 
+    "username": "ftp@tutorialesatualcance.com",
+    "password": "Fernando2010!",
+    "rootDirectory": "/restaurantes.tutorialesatualcance.com/public_html",
+    "autoCreateDirectory": true,
+    "ignoredFilenames": ["example.py", "anotherFilename.json"],
+    "ignoredExtensions": [".ignore", ".txt"],
+    "ignoredFolders": ["ignore", "IGNORE"],
+    "sessionCacheEnabled": true,
+    "connectionTimeout": 600,
+    "passive": true
+}
