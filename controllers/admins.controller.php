@@ -255,7 +255,8 @@ class AdminsController{
 					$email = $_POST["resetPassword"];
 					$title = 'SOLICITUD DE NUEVA CONTRASEÑA';
 					$message = '<h4 style="font-weight: 100; color:#999; padding:0px 20px"><strong>Su nueva contraseña: '.$newPassword.'</strong></4><h4 style="font-weight: 100; color:#999; padding:0px 20px">Ingrese nuevamente al sitio con esta contraseña y recuerde cambiarla</4>';
-					$link = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"];
+					$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+					$link = $scheme . "://" . $_SERVER["SERVER_NAME"];
 
 					$sendEmail = TemplateController::sendEmail($subject, $email, $title, $message, $link);
 

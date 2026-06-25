@@ -63,38 +63,38 @@ class BooksController
 					=============================================*/
 
 					// Solo enviamos si hay número de teléfono
-					//if (!empty(trim($_POST["phone_book"]))) {
+					if (!empty(trim($_POST["phone_book"]))) {
 //
-					//	// Consultar nombre del especialista
-					//	$specialistName = '';
-					//	$urlTable = "tables?linkTo=id_table&equalTo=" . $_POST["id_table_book"] . "&select=title_table";
-					//	$getTable = CurlController::request($urlTable, "GET", []);
+						// Consultar nombre del especialista
+						$specialistName = '';
+						$urlTable = "tables?linkTo=id_table&equalTo=" . $_POST["id_table_book"] . "&select=title_table";
+						$getTable = CurlController::request($urlTable, "GET", []);
 //
-					//	if ($getTable->status == 200 && !empty($getTable->results)) {
-					//		$specialistName = urldecode($getTable->results[0]->title_table);
-					//	}
+						if ($getTable->status == 200 && !empty($getTable->results)) {
+							$specialistName = urldecode($getTable->results[0]->title_table);
+						}
 //
-					//	$bookData = [
-					//		'num' => $num_book,
-					//		'client' => trim($_POST["client_book"]),
-					//		'date' => $_POST["date_book"],
-					//		'time' => $_POST["time_book"],
-					//		'specialist' => $specialistName
-					//	];
+						$bookData = [
+							'num' => $num_book,
+							'client' => trim($_POST["client_book"]),
+							'date' => $_POST["date_book"],
+							'time' => $_POST["time_book"],
+							'specialist' => $specialistName
+						];
 //
-					//	require_once "controllers/whatsapp.controller.php";
-					//	$wa = WhatsAppController::sendBookingConfirmation(
-					//		$phone,
-					//		$bookData
-					//	);
+						require_once "controllers/whatsapp.controller.php";
+						$wa = WhatsAppController::sendBookingConfirmation(
+							$_POST["phone_book"],
+							$bookData
+						);
 //
-					//	// Log opcional — no bloqueamos el flujo si falla el WA
-					//	if ($wa->status !== 200) {
-					//		error_log("WhatsApp fallo [reserva #{$num_book}]: " . json_encode($wa->response));
-					//	}
-					//} else {
-						//echo "<script>console.log('Error al enviar el WhatsApp - " . $num_book . "');</script>";
-					//}
+						// Log opcional — no bloqueamos el flujo si falla el WA
+						if ($wa->status !== 200) {
+							error_log("WhatsApp fallo [reserva #{$num_book}]: " . json_encode($wa->response));
+						}
+					} else {
+						echo "<script>console.log('Error al enviar el WhatsApp - " . $num_book . "');</script>";
+					}
 
 					echo '
 					<script>

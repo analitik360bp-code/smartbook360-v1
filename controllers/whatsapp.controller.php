@@ -2,9 +2,9 @@
 
 class WhatsAppController {
 
-    private static $apiUrl   = "https://graph.facebook.com/v19.0/";
-    private static $phoneId  = "1132585386585238";   // De Meta Business
-    private static $token    = "EAAVIaiawwSMBRVQG2DY7AZC4a18TbZAJEHj36mjNoo7tQhCobZBV3wfSJKy59d0sRaJvlRMtCzREHpcTKfiuh04ZBpZC0lxLb1sJlebbGneT8stOE0nfWZB5x6ZCi45zOr7vnU3cwZCoaxPWD9IpqfQwWEAi2j0euoZCJ8tXQHVZBj3W6ZAcZBO7F0RvZCtIBLqYYDgZDZD";       // Token permanente
+    private static $apiUrl   = "https://graph.facebook.com/v25.0/";
+    private static $phoneId  = "947125511257489";   // De Meta Business
+    private static $token    = "EAAVIaiawwSMBRyIQzUxVlbOiCQby4ichgFBZCrXEDIRZCFK0obT7JXdjgozX5STZB09yp7TYKbTyOLhtOlMEax4AuNCwVq9FlMV07U2IfsyX5EqNtBPquKecZBIruy2HGagLTnicaZBoQZAiMe81SSxO7r5tHUa1Ej13UuxFxNHt5xkD66OldSisyGwK5KCgZDZD";       // Token permanente
 /*EAAiE5pNltcgBRQ2FRHTFTUXygH39v2dl4eL8YdKhxp7xsJMyVv4ojUVYRRuwMSBDcKM8u1GfdnRjm98wTZA4TNjG2v9a4u28wpXiriBFBSztgUdTiaeW2KkjExZAAoMBEGRqZCBhdOkRpXhTZAZBBbeERudfJ0bqIU3d3AZAcL3FiZB3IhcJWiYsIH9auFVAtgDbyFnc8tLJPtR80eOBExoaAYx7kQmMG1GLXVpEZBB1nPEuoQorLT3RguMwtZCyT7CqTZA2ZCbJ4qejFvIyzqRKZBDdhAZDZD*/
     /**
      * Envía mensaje de confirmación de reserva por WhatsApp
