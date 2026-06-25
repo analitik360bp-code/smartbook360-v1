@@ -19,3 +19,20 @@
 [24-Jun-2026 15:25:07 America/Bogota] WhatsApp DEBUG - Response: {"error":{"message":"(#133010) Account not registered","code":133010,"type":"OAuthException","fbtrace_id":"Ag-OvMXOMR9EwANbSCEFxtP"}}
 [24-Jun-2026 15:25:07 America/Bogota] WhatsApp fallo [reserva #9191782332706]: {"error":{"message":"(#133010) Account not registered","code":133010,"type":"OAuthException","fbtrace_id":"Ag-OvMXOMR9EwANbSCEFxtP"}}
 [25-Jun-2026 09:30:12 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on string in C:\xampp\htdocs\reservas_1\cms\controllers\admins.controller.php on line 47
+[25-Jun-2026 09:40:15 America/Bogota] WhatsApp DEBUG - Phone original: diego gonzalez
+[25-Jun-2026 09:40:15 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[25-Jun-2026 09:40:15 America/Bogota] WhatsApp DEBUG - Phone ID: 947125511257489
+[25-Jun-2026 09:40:15 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/947125511257489/messages
+[25-Jun-2026 09:40:15 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* diego gonzalez\n\ud83d\udcc5 *Fecha:* 25\/6\/2026\n\ud83d\udd50 *Hora:* 13:00\n\ud83d\udc86 *Especialista:* Angela Rodriguez\n\ud83d\udd22 *N\u00b0 Reserva:* #8781782398415\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[25-Jun-2026 09:40:16 America/Bogota] WhatsApp DEBUG - HTTP Code: 400
+[25-Jun-2026 09:40:16 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[25-Jun-2026 09:40:16 America/Bogota] WhatsApp DEBUG - Response: {"error":{"message":"Unsupported post request. Object with ID '947125511257489' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"Agtdo62cafgPE4B7EUdDrOZ"}}
+[25-Jun-2026 09:40:16 America/Bogota] WhatsApp fallo [reserva #8781782398415]: {"error":{"message":"Unsupported post request. Object with ID '947125511257489' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https:\/\/developers.facebook.com\/docs\/graph-api","type":"GraphMethodException","code":100,"error_subcode":33,"fbtrace_id":"Agtdo62cafgPE4B7EUdDrOZ"}}
+[25-Jun-2026 10:01:58 America/Bogota] WhatsApp DEBUG - Phone original: diego gonzalez
+[25-Jun-2026 10:01:58 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[25-Jun-2026 10:01:58 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[25-Jun-2026 10:01:58 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[25-Jun-2026 10:01:58 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* diego gonzalez\n\ud83d\udcc5 *Fecha:* 25\/6\/2026\n\ud83d\udd50 *Hora:* 13:00\n\ud83d\udc86 *Especialista:* Angela Rodriguez\n\ud83d\udd22 *N\u00b0 Reserva:* #2681782399718\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[25-Jun-2026 10:02:00 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[25-Jun-2026 10:02:00 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[25-Jun-2026 10:02:00 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSQjY0NkRDMTAzODNCOTlBQjg0AA=="}]}
