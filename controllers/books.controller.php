@@ -64,16 +64,16 @@ class BooksController
 
 					// Solo enviamos si hay número de teléfono
 					if (!empty(trim($_POST["phone_book"]))) {
-//
+
 						// Consultar nombre del especialista
 						$specialistName = '';
 						$urlTable = "tables?linkTo=id_table&equalTo=" . $_POST["id_table_book"] . "&select=title_table";
 						$getTable = CurlController::request($urlTable, "GET", []);
-//
+
 						if ($getTable->status == 200 && !empty($getTable->results)) {
 							$specialistName = urldecode($getTable->results[0]->title_table);
 						}
-//
+
 						$bookData = [
 							'num' => $num_book,
 							'client' => trim($_POST["client_book"]),
@@ -81,13 +81,13 @@ class BooksController
 							'time' => $_POST["time_book"],
 							'specialist' => $specialistName
 						];
-//
+						
 						require_once "controllers/whatsapp.controller.php";
 						$wa = WhatsAppController::sendBookingConfirmation(
 							$_POST["phone_book"],
 							$bookData
 						);
-//
+						
 						// Log opcional — no bloqueamos el flujo si falla el WA
 						if ($wa->status !== 200) {
 							error_log("WhatsApp fallo [reserva #{$num_book}]: " . json_encode($wa->response));
@@ -103,6 +103,64 @@ class BooksController
 						fncSweetAlert("success","La reserva ha sido creada con éxito",setTimeout(()=>location.reload(),1250));  
 					</script>
 					';
+				}
+
+				if($createBook->status == 200){
+
+					$subject = "Confirmación de reserva";
+					$email = $_POST["email_book"];
+					$title = 'Confirmación de reserva';
+					$message = '
+					<div style="color:#555; font-size:16px; line-height:24px; padding: 0 20px;">
+						<p>Hola <strong>'.$_POST["client_book"].'</strong>,</p>
+						<p>Tu cita ha sido agendada con éxito. A continuación te compartimos los detalles de tu reserva:</p>
+
+						<!-- Caja de detalles de la reserva -->
+						<div style="background-color: #f9f9fb; border: 1px solid #eaeaea; border-radius: 6px; padding: 20px; margin: 25px 0;">
+							
+							<p style="margin: 0 0 10px 0;">
+								<span style="font-size: 18px;">👨‍💼</span> <strong>Especialista:</strong><br>
+								<span style="color: #333;">'.$specialistName.'</span>
+							</p>
+
+							<p style="margin: 0 0 10px 0;">
+								<span style="font-size: 18px;">📅</span> <strong>Fecha y Hora:</strong><br>
+								<span style="color: #333;">'.$_POST["date_book"].' '.$_POST["time_book"].'</span>
+							</p>
+
+						</div>
+
+						<p style="text-align: center; margin-top: 30px;">Para que no lo olvides, puedes guardar esta cita en tu calendario:</p>
+					</div>
+					
+					<h4 style="font-weight: 100; color:#999; padding:0px 20px">Ingrese para confirmar o cancelar su reserva</4>';
+					$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+					$link = $scheme . "://" . $_SERVER["SERVER_NAME"]."/confirmacion?id=".$num_book;
+
+					$sendEmail = TemplateController::sendEmail($subject, $email, $title, $message, $link, "SmartBook-Analitik360");
+
+					if($sendEmail == "ok"){
+
+						echo '<script>
+
+								fncFormatInputs();
+								fncMatPreloader("off");
+								fncToastr("success", "Se ha enviado la confirmación de reserva por correo electrónico");
+
+							</script>
+						';
+
+					}else{
+
+						echo '<script>
+
+							fncFormatInputs();
+							fncMatPreloader("off");
+							fncNotie("error", "'.$sendEmail.'");
+
+							</script>
+						';
+					}
 				}
 
 			} else {

@@ -22,8 +22,19 @@ if ($getBook->status == 200) {
     $title_table = $getBook->results[0]->title_table;
     $description_table = $getBook->results[0]->description_table;
     $image_table = $getBook->results[0]->image_table;
+    $idOffice = $getBook->results[0]->id_office_book;
 }
 
+$url = "offices?linkTo=id_office&equalTo=" . $idOffice;
+$method = "GET";
+$fields = array();
+
+$getOffice = CurlController::request($url, $method, $fields);
+
+if ($getOffice->status == 200) {
+    $office = urldecode($getOffice->results[0]->title_office);
+    $Direction = urldecode($getOffice->results[0]->address_office);
+}
 ?>
 
 
@@ -74,12 +85,36 @@ if ($getBook->status == 200) {
                 </div>
             </div>
             <!-- Actions -->
+             <?php           
+                // 1. Datos de la reserva
+                $titulo = "Reserva en Analitik360";
+                $descripcion = "Detalles de tu reserva. Recuerda llegar 10 minutos antes.";
+                $ubicacion = $Direction." ".$office;
+
+                // 2. Fechas de la reserva (Ejemplo: 25 de Junio de 2026 de 10:00 AM a 11:00 AM)
+                // Se usa strtotime para convertir tu fecha a timestamp y gmdate para formato UTC
+                $fechaInicio = gmdate('Ymd\THis\Z', strtotime($date_book . ' ' . $time_book));
+                $fechaFin = gmdate('Ymd\THis\Z', strtotime($date_book . ' ' . $time_book . ' +1 hour'));
+
+                // 3. Limpiar los textos para que sean válidos en una URL
+                $tituloUrl = urlencode($titulo);
+                $descripcionUrl = urlencode($descripcion);
+                $ubicacionUrl = urlencode($ubicacion);
+
+                // 4. Armar el link final
+                $googleCalendarLink = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=$tituloUrl&dates=$fechaInicio/$fechaFin&details=$descripcionUrl&location=$ubicacionUrl";
+
+                // 5. Imprimirlo en tu HTML o en la plantilla de correo
+                echo '<a href="'.$googleCalendarLink.'" target="_blank" style="background-color: #4285F4; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px;">Añadir a Google Calendar</a>';
+
+            ?>
             
             <div class="mt-stack-lg pt-stack-lg border-t border-outline-variant">
                 <p class="font-label-sm text-label-sm text-on-surface-variant">
                     Se ha enviado un correo de confirmación a <span class="font-semibold"><?php echo $email_book; ?></span>
                     </p>
             </div>
+
         </div>
         <!-- Contextual Illustration (Desktop Only) -->
         <div class="hidden lg:block absolute -right-24 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none">
@@ -89,25 +124,7 @@ if ($getBook->status == 200) {
         </div>
     </div>
 </main>
-<!-- Bottom Navigation Bar (Mobile only) -->
-<nav
-    class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 pb-safe bg-surface-container dark:bg-surface-dim shadow-[0_-4px_12px_0_rgba(0,0,0,0.05)] dark:shadow-none">
-    <button
-        class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-fixed text-on-secondary-container dark:text-on-secondary-fixed rounded-full px-4 py-1 active:scale-95 transition-transform duration-150">
-        <span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
-        <span class="font-label-sm text-label-sm">Appointments</span>
-    </button>
-    <button
-        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform duration-150">
-        <span class="material-symbols-outlined" data-icon="history">history</span>
-        <span class="font-label-sm text-label-sm">History</span>
-    </button>
-    <button
-        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-variant dark:hover:bg-inverse-surface active:scale-95 transition-transform duration-150">
-        <span class="material-symbols-outlined" data-icon="settings">settings</span>
-        <span class="font-label-sm text-label-sm">Settings</span>
-    </button>
-</nav>
+
 <script>
     // Simple confetti effect
     const canvas = document.getElementById('confetti');

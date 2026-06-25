@@ -36,3 +36,65 @@
 [25-Jun-2026 10:02:00 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
 [25-Jun-2026 10:02:00 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
 [25-Jun-2026 10:02:00 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSQjY0NkRDMTAzODNCOTlBQjg0AA=="}]}
+[25-Jun-2026 17:03:42 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on string in C:\xampp\htdocs\reservas_1\cms\controllers\admins.controller.php on line 47
+[25-Jun-2026 17:23:20 America/Bogota] WhatsApp DEBUG - Phone original: diego gonzalez
+[25-Jun-2026 17:23:20 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[25-Jun-2026 17:23:20 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[25-Jun-2026 17:23:20 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[25-Jun-2026 17:23:20 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* diego gonzalez\n\ud83d\udcc5 *Fecha:* 25\/6\/2026\n\ud83d\udd50 *Hora:* 14:00\n\ud83d\udc86 *Especialista:* Angela Rodriguez\n\ud83d\udd22 *N\u00b0 Reserva:* #7021782426200\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[25-Jun-2026 17:23:21 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[25-Jun-2026 17:23:21 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[25-Jun-2026 17:23:21 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSNDU5NkExQUJDM0EyQzUyNURDAA=="}]}
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $title_table in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 68
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $image_table in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 69
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $title_table in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 74
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $resultado_final in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 76
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $date_book in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 86
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $time_book in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 95
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $num_book in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 107
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $confirm_book in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 111
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $confirm_book in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 116
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $confirm_book in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 116
+[25-Jun-2026 17:32:02 America/Bogota] PHP Warning:  Undefined variable $num_book in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confirmacion.php on line 123
+[25-Jun-2026 17:45:05 America/Bogota] PHP Warning:  Undefined variable $Direction in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confim.php on line 98
+[25-Jun-2026 17:45:05 America/Bogota] PHP Warning:  Undefined variable $office in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confim.php on line 98
+[25-Jun-2026 17:45:46 America/Bogota] PHP Warning:  Undefined variable $Direction in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confim.php on line 98
+[25-Jun-2026 17:45:46 America/Bogota] PHP Warning:  Undefined variable $office in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confim.php on line 98
+[25-Jun-2026 17:46:13 America/Bogota] PHP Warning:  Undefined variable $Direction in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confim.php on line 98
+[25-Jun-2026 17:46:13 America/Bogota] PHP Warning:  Undefined variable $office in C:\xampp\htdocs\reservas_1\cms\views\pages\confirmacion\confim.php on line 98
+[25-Jun-2026 17:55:42 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on string in C:\xampp\htdocs\reservas_1\cms\controllers\admins.controller.php on line 47
+[25-Jun-2026 17:56:04 America/Bogota] WhatsApp DEBUG - Phone original: diego gonzalez
+[25-Jun-2026 17:56:04 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[25-Jun-2026 17:56:04 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[25-Jun-2026 17:56:04 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[25-Jun-2026 17:56:04 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* diego gonzalez\n\ud83d\udcc5 *Fecha:* 26\/6\/2026\n\ud83d\udd50 *Hora:* 14:00\n\ud83d\udc86 *Especialista:* Angela Rodriguez\n\ud83d\udd22 *N\u00b0 Reserva:* #5501782428164\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[25-Jun-2026 17:56:05 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[25-Jun-2026 17:56:05 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[25-Jun-2026 17:56:05 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSNjIzRThBQ0JDMUM4MTUxMjQ1AA=="}]}
+[25-Jun-2026 18:03:53 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on string in C:\xampp\htdocs\reservas_1\cms\controllers\admins.controller.php on line 47
+[25-Jun-2026 18:04:16 America/Bogota] WhatsApp DEBUG - Phone original: Andres Gonzalez
+[25-Jun-2026 18:04:16 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[25-Jun-2026 18:04:16 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[25-Jun-2026 18:04:16 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[25-Jun-2026 18:04:16 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* Andres Gonzalez\n\ud83d\udcc5 *Fecha:* 26\/6\/2026\n\ud83d\udd50 *Hora:* 14:00\n\ud83d\udc86 *Especialista:* Paula Laiton\n\ud83d\udd22 *N\u00b0 Reserva:* #3271782428655\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[25-Jun-2026 18:04:17 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[25-Jun-2026 18:04:17 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[25-Jun-2026 18:04:17 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSNjcxQTI0OUJENDNEMEEyQUE5AA=="}]}
+[25-Jun-2026 18:04:17 America/Bogota] PHP Warning:  Undefined array key "especialista" in C:\xampp\htdocs\reservas_1\cms\controllers\books.controller.php on line 123
+[25-Jun-2026 18:04:17 America/Bogota] PHP Warning:  Undefined array key "service_book" in C:\xampp\htdocs\reservas_1\cms\controllers\books.controller.php on line 133
+[25-Jun-2026 18:53:03 America/Bogota] WhatsApp DEBUG - Phone original: diego gonzalez
+[25-Jun-2026 18:53:03 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[25-Jun-2026 18:53:03 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[25-Jun-2026 18:53:03 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[25-Jun-2026 18:53:03 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* diego gonzalez\n\ud83d\udcc5 *Fecha:* 26\/6\/2026\n\ud83d\udd50 *Hora:* 15:00\n\ud83d\udc86 *Especialista:* Angela Rodriguez\n\ud83d\udd22 *N\u00b0 Reserva:* #7151782431583\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[25-Jun-2026 18:53:04 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[25-Jun-2026 18:53:04 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[25-Jun-2026 18:53:04 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSQ0FCQzhCRjYzNzA0QjY1RkEwAA=="}]}
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - Phone original: Diego Gonzalez
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* Diego Gonzalez\n\ud83d\udcc5 *Fecha:* 27\/6\/2026\n\ud83d\udd50 *Hora:* 16:00\n\ud83d\udc86 *Especialista:* Fernanda Morales\n\ud83d\udd22 *N\u00b0 Reserva:* #4191782431613\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[25-Jun-2026 18:53:34 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSRTE2RkUxNTY0Q0JFRjkyMEY5AA=="}]}

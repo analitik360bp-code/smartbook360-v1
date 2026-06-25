@@ -258,7 +258,7 @@ class AdminsController{
 					$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 					$link = $scheme . "://" . $_SERVER["SERVER_NAME"];
 
-					$sendEmail = TemplateController::sendEmail($subject, $email, $title, $message, $link);
+					$sendEmail = TemplateController::sendEmail($subject, $email, $title, $message, $link, "Soporte-Analitik360");
 
 					if($sendEmail == "ok"){
 
