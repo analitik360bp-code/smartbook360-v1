@@ -168,6 +168,13 @@ if($_SESSION["admin"]->id_office_admin > 0){
 			                 <?php if ($value->status_table == "ocupada"): ?>
 			                   Ocupada
 			                 <?php endif ?>
+			                 <?php if ($value->status_table == "pagando"): ?>
+			                   Pagando
+			                 <?php endif ?>
+			                 <?php if ($value->status_table == "reservada"): ?>
+			                  Reservada
+			                 <?php endif ?>
+
 			                </span>
 			            </div>
 			            <div class="table-info">
@@ -208,7 +215,7 @@ if($_SESSION["admin"]->id_office_admin > 0){
 			            			Tomar Turno
 			            		</a>
 				            <?php endif ?>
-				            <?php if ($value->status_table == "ocupada"): ?>
+				            <?php if ($value->status_table == "ocupada" || $value->status_table == "pagando"): ?>
 			            		<a href="/pos?idTable=<?php echo $value->id_table ?>&titleTable=<?php echo $value->title_table ?>" class="btn btn-light btn-sm w-100 seat-guests-btn">
 			            			Ver Orden
 			            		</a>
