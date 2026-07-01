@@ -220,11 +220,6 @@ if($_SESSION["admin"]->id_office_admin > 0){
 			            			Ver Orden
 			            		</a>
 				            <?php endif ?>
-				            <?php if ($value->status_table == "reservada"): ?>
-								<a href="#" class="btn btn-light btn-sm w-100 seat-guests-btn">
-			            			Tomar Reserva a las <?php echo $time_book ?>
-			            		</a>
-				            <?php endif ?>
 				            <?php if ($value->status_table == "pagando"): ?>
 								<button class="btn btn-info btn-sm w-100 rounded">
 				                    <span class="position-relative" style="bottom:2px">En Proceso de Pago</span> <div class="spinner-border spinner-border-sm"></div>

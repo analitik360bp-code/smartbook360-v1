@@ -279,7 +279,7 @@ $tip = 0.1;
 
 			} elseif (isset($confirm[2]) && $confirm[2] == "cancel") {
 
-				include "pages/confirmacion/cancel.php";
+				include "pages/confirmacion/Cancel.php";
 
 			}
 		} else {

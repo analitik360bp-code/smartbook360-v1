@@ -13,7 +13,7 @@
 			<h3><?php echo $admin->symbol_admin ?> <?php echo $admin->title_admin ?></h3>
 
 			<p>
-			Sistema POS Multisucursal para Restaurantes
+			Sistema POS
 			<a href="/"><strong>Navega a la página de inicio</strong></a>.
 			<p>
 
