@@ -11,7 +11,8 @@ class CurlController{
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
-			CURLOPT_URL => 'http://api.reservas.com/'.$url,
+			CURLOPT_URL => 'https://apismartbook.analitik360bp.com/'.$url,
+			//CURLOPT_URL => 'http://api.reservas.com/'.$url,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,

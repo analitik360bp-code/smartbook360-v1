@@ -111,7 +111,7 @@ class DynamicController{
 				$method = "POST";
 				$fields = array();
 				$count = 0;
-
+				
 				foreach ($module->columns as $key => $value) {
 
 					if($value->type_column == "password"){
@@ -126,11 +126,15 @@ class DynamicController{
 
 						$fields[$value->title_column] = trim($_POST[$value->title_column]);
 					}else{
-					
-						if(isset($_POST[$value->title_column])){
+						//&& $_POST[$value->title_column] != $_POST["servicio_table"]
+						if(isset($_POST[$value->title_column]) && $_POST[$value->title_column] != $_POST["salida_table"] && $_POST[$value->title_column] != $_POST["entrada_table"]){
 
 							$fields[$value->title_column] = urlencode(trim($_POST[$value->title_column]));
 
+						}else{
+							//$fields["servicio_table"] = $_POST["servicio_table"];
+							$fields["salida_table"] = $_POST["salida_table"];
+							$fields["entrada_table"] = $_POST["entrada_table"];
 						}
 
 					}
@@ -143,6 +147,8 @@ class DynamicController{
 
 						$save = CurlController::request($url,$method,$fields);
 
+						echo "<script>console.log('" . $url . "');</script>";
+						echo '<script>console.log("' .print_r($fields, true). '");</script>';
 						if($save->status == 200){
 
 							echo '

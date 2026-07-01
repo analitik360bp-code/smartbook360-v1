@@ -108,7 +108,7 @@ class FilesController{
 					);
 
 					$uploadData = CurlController::request($url,$method,$fields);
-
+					
 					if($uploadData->status == 200){
 
 						/*=============================================
