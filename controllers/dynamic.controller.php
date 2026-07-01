@@ -127,12 +127,12 @@ class DynamicController{
 						$fields[$value->title_column] = trim($_POST[$value->title_column]);
 					}else{
 						//&& $_POST[$value->title_column] != $_POST["servicio_table"]
-						if(isset($_POST[$value->title_column]) && $_POST[$value->title_column] != $_POST["salida_table"] && $_POST[$value->title_column] != $_POST["entrada_table"]){
+						if(isset($_POST[$value->title_column]) && $_POST[$value->title_column] != $_POST["salida_table"] && $_POST[$value->title_column] != $_POST["entrada_table"] && $_POST[$value->title_column] != $_POST["servicio_table"]){
 
 							$fields[$value->title_column] = urlencode(trim($_POST[$value->title_column]));
 
 						}else{
-							//$fields["servicio_table"] = $_POST["servicio_table"];
+							$fields["servicio_table"] = $_POST["servicio_table"];
 							$fields["salida_table"] = $_POST["salida_table"];
 							$fields["entrada_table"] = $_POST["entrada_table"];
 						}

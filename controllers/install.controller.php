@@ -9,9 +9,13 @@ class InstallController{
 	static public function infoDatabase(){
 
 		$infoDB = array(
-			"database" => "restaurant",
-			"user" => "root",
-			"pass" => ""
+			//"database" => "restaurant",
+			//"user" => "root",
+			//"pass" => ""
+
+			"database" => "smartbook",
+			"user" => "smartbook",
+			"pass" => "BEw9VoUcoPkRRK7FXOzJ"
 		);
 
 		return $infoDB;
