@@ -97,6 +97,7 @@ if ($getBook_cancel->status == 200) {
                         Confirmar Cancelación
                     </button>
                     <button
+                        onclick="window.location.href='/confirmacion?id=<?php echo $num_book; ?>';"
                         type="button"
                         class="w-full md:flex-1 border border-outline-variant text-secondary py-3 px-stack-md rounded-lg font-label-md text-label-md hover:bg-surface-container-low active:scale-95 transition-all">
                         Volver atrás
