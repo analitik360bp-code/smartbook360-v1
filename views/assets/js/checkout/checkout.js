@@ -62,7 +62,7 @@ $(document).ready(function () {
         $btn.prop("disabled", true);   
         var data = new FormData();
         data.append("subtotal",parseFloat($("#subtotalValue").html()));
-        data.append("total",parseFloat($("#totalValue").html()));
+        data.append("total",parseFloat($("#paymentAmount").html()));
         data.append("tip",parseFloat($("#paymentTip").val()));
         data.append("idOrder",$("#transactionOrder").attr("idOrder"));
         data.append("idTable",$("#transactionOrder").attr("idTable"));
