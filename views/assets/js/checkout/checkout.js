@@ -60,10 +60,10 @@ $(document).ready(function () {
 
         $btn.html('<i class="fas fa-spinner fa-spin"></i> Procesando...');
         $btn.prop("disabled", true);
-
+        const taxValue = parseFloat($("#taxValue").val());     
         var data = new FormData();
         data.append("subtotal",parseFloat($("#subtotalValue").html()));
-        data.append("tax",parseFloat($("#taxValue").html()));
+        data.append("tip", isNaN(taxValue) ? 0 : taxValue); 
         data.append("total",parseFloat($("#totalValue").html()));
         data.append("tip",parseFloat($("#paymentTip").val()));
         data.append("idOrder",$("#transactionOrder").attr("idOrder"));

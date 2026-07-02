@@ -68,7 +68,7 @@ class CheckoutController{
 							/*=============================================
 							Actualizar la orden
 							=============================================*/ 
-							$url = "orders?token=".$this->token."&table=admins&suffix=admin&id=".$this->idOrder."&nameId=id_order";
+							$url = "orders?id=".$this->idOrder."&nameId=id_order&token=".$this->token."&table=admins&suffix=admin";
 							$method = "PUT";
 							$fields = array(
 								"subtotal_order" => $this->subtotal,
