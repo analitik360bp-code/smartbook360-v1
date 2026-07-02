@@ -61,6 +61,12 @@ $tip = 0.1;
 	<link rel="icon" href="https://smartbook.analitik360bp.com/views/assets/img/Logo_.png" sizes="16x16" type="image/png">
 	<link rel="apple-touch-icon" href="https://smartbook.analitik360bp.com/views/assets/img/Logo_.png" sizes="180x180" type="image/png">
 
+	<!-- Vinculación del manifiesto para Android -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Configuración del color de la barra en Chrome móvil -->
+    <meta name="theme-color" content="#002f6c">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
