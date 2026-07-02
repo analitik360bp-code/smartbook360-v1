@@ -79,7 +79,7 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             success: function (response){
-                
+                console.log("response: " + response);
                 if(response == 200){
                     
                     $btn.html("Procesar el Pago");

@@ -68,7 +68,7 @@ class CheckoutController{
 							/*=============================================
 							Actualizar la orden
 							=============================================*/ 
-							$url = "orders?id=".$this->idOrder."&nameId=id_order&token=".$this->token."&table=admins&suffix=admin";
+							$url = "orders?token=".$this->token."&table=admins&suffix=admin&id=".$this->idOrder."&nameId=id_order";
 							$method = "PUT";
 							$fields = array(
 								"subtotal_order" => $this->subtotal,
@@ -83,7 +83,6 @@ class CheckoutController{
 							$fields = http_build_query($fields);
 
 							$updateOrder = CurlController::request($url,$method,$fields);
-
 							if($updateOrder->status == 200){
 
 								/*=============================================
@@ -94,6 +93,10 @@ class CheckoutController{
 								$fields = array(
 									"status_table" => "libre"
 								);
+								echo "<pre>fields: ";
+								print_r($fields);
+								echo "</pre>";
+								echo "<script>console.log('fields: " . json_encode($fields) . "');</script>";
 
 								$fields = http_build_query($fields);
 
@@ -105,13 +108,13 @@ class CheckoutController{
 								}
 
 							}else{
-
 								echo "error";
 							}
 
 
 						}
 					}else{
+						//echo "json_encode($fields)";
 
 						echo "error";
 					}
@@ -119,13 +122,14 @@ class CheckoutController{
 				}
 
 			}else{
+				//echo "json_encode($fields)";
 
 				echo "error";
 			}
 
 		}else{
-
-			echo "error";
+			echo "$url";
+			//echo "error";
 		}
     }
 
