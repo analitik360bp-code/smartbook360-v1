@@ -63,7 +63,7 @@ $(document).ready(function () {
         const taxValue = parseFloat($("#taxValue").val());     
         var data = new FormData();
         data.append("subtotal",parseFloat($("#subtotalValue").html()));
-        data.append("tip", isNaN(taxValue) ? 0 : taxValue); 
+        data.append("tax", isNaN(taxValue) ? 0 : taxValue); 
         data.append("total",parseFloat($("#totalValue").html()));
         data.append("tip",parseFloat($("#paymentTip").val()));
         data.append("idOrder",$("#transactionOrder").attr("idOrder"));
