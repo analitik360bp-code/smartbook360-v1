@@ -72,7 +72,6 @@ class CheckoutController{
 							$method = "PUT";
 							$fields = array(
 								"subtotal_order" => $this->subtotal,
-								"tax_order" => $this->tax,
 								"tip_order" => $this->tip,
 								"total_order" => $this->total,
 								"method_order" => $this->method,
@@ -93,11 +92,7 @@ class CheckoutController{
 								$fields = array(
 									"status_table" => "libre"
 								);
-								echo "<pre>fields: ";
-								print_r($fields);
-								echo "</pre>";
-								echo "<script>console.log('fields: " . json_encode($fields) . "');</script>";
-
+								
 								$fields = http_build_query($fields);
 
 								$updateTable = CurlController::request($url,$method,$fields);

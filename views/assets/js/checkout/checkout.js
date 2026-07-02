@@ -59,11 +59,9 @@ $(document).ready(function () {
         const $btn = $(this);
 
         $btn.html('<i class="fas fa-spinner fa-spin"></i> Procesando...');
-        $btn.prop("disabled", true);
-        const taxValue = parseFloat($("#taxValue").val());     
+        $btn.prop("disabled", true);   
         var data = new FormData();
         data.append("subtotal",parseFloat($("#subtotalValue").html()));
-        data.append("tax", isNaN(taxValue) ? 0 : taxValue); 
         data.append("total",parseFloat($("#totalValue").html()));
         data.append("tip",parseFloat($("#paymentTip").val()));
         data.append("idOrder",$("#transactionOrder").attr("idOrder"));
