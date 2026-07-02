@@ -17,7 +17,7 @@
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
 <div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-extrabold tracking-tight flex items-center gap-2">
     <!-- LOGO -->
-    <img src="https://smartbook.analitik360bp.com/views/assets/img/logo_.png" alt="Logo SmartBook" class="h-8 w-auto object-contain">
+    <img src="https://smartbook.analitik360bp.com/views/assets/img/Logo_.png" alt="Logo SmartBook" class="h-8 w-auto object-contain">
     
     <!-- TEXTO -->
     <span>SmartBook</span>
