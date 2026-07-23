@@ -87,7 +87,7 @@ if ($getOffice->status == 200) {
             <!-- Actions -->
              <?php           
                 // 1. Datos de la reserva
-                $titulo = "Reserva en Analitik360";
+                $titulo = $office;
                 $descripcion = "Detalles de tu reserva. Recuerda llegar 10 minutos antes.";
                 $ubicacion = $Direction." ".$office;
 

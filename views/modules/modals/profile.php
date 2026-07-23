@@ -1,3 +1,22 @@
+<?php
+      
+      $url = "relations?rel=suscripciones,planes&type=suscripcion,plan&select=title_plan,end_date_suscripcion&linkTo=id_office_suscripcion&equalTo=".$_SESSION["admin"]->id_office_admin;
+    	$method = "GET";
+    	$fields = array();
+
+    	$getBooks = CurlController::request($url,$method,$fields);
+		//echo "<pre>"; print_r($getBooks); echo "</pre>";
+    	if($getBooks->status == 200){
+
+	      $books = $getBooks->results;
+
+	    }else{
+
+	      $books = array();
+	    }
+
+?>
+
 <!-- The Modal -->
 <div class="modal" id="myProfile">
   <div class="modal-dialog modal-dialog-centered">
@@ -15,7 +34,17 @@
         <div class="modal-body px-4">
 
           <input type="hidden" name="id_admin" value="<?php echo base64_encode($_SESSION["admin"]->id_admin) ?>">
-         
+         <div class="form-group mb-3">
+
+            <label for="email_admin">
+              <b>Plan:</b> <?php if (isset($books[0]->title_plan)) { echo $books[0]->title_plan; } else { echo "Sin plan"; } ?></br>
+            </label>
+            <br>
+            <label for="email_admin">
+              <b>Fecha de expiración:</b> <?php if (isset($books[0]->end_date_suscripcion)) { echo $books[0]->end_date_suscripcion; } else { echo "Sin fecha de expiración"; } ?>
+            </label>
+
+          </div>
           <div class="form-group mb-3">
 
             <label for="email_admin">Correo<sup>*</sup></label>

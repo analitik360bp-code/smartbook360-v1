@@ -339,10 +339,14 @@ $tip = 0.1;
 					<?php if (
 						$routesArray[0] == "logout" ||
 						$routesArray[0] == "welcome" ||
-						$routesArray[0] == "comandas"
+						$routesArray[0] == "comandas" 
 					): ?>
 
 						<?php include "pages/" . $routesArray[0] . "/" . $routesArray[0] . ".php"; ?>
+
+					<?php elseif ($routesArray[0] == "gestionar"): ?>
+
+						<?php include "pages/dynamic/custom/mesas/mesas.php"; ?>
 
 					<?php else: ?>
 
@@ -416,10 +420,15 @@ $tip = 0.1;
 
 						$page = CurlController::request($url, $method, $fields);
 
-						if ($page->status == 200 && $page->results[0]->type_page == "modules") {
+						if ($page->status == 200 && $_SESSION["admin"]->rol_admin == "gerente") {
+
+							include "pages/custom/calendario/calendario.php";
+
+						} else if ($page->status == 200 && $page->results[0]->type_page == "modules") {
 
 							include "pages/dynamic/dynamic.php";
 
+							
 						} else if ($page->status == 200 && $page->results[0]->type_page == "custom") {
 
 							include "pages/custom/" . $page->results[0]->url_page . "/" . $page->results[0]->url_page . ".php";

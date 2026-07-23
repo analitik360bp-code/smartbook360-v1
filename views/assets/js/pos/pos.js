@@ -486,7 +486,7 @@ $(function(){
             
             if(response == 200){
 
-              fncSweetAlert("success", "Orden eliminada con éxito", setTimeout(function(){ window.location = "/" },1250));
+              fncSweetAlert("success", "Orden eliminada con éxito", setTimeout(function(){ window.location = "/gestionar" },1250));
               console.log("Orden eliminada con éxito");
             }
 

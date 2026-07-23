@@ -1,14 +1,16 @@
-<?php 
+<?php
 
-class DynamicController{
+class DynamicController
+{
 
 	/*=============================================
 	Gestión de datos dinámicos
-	=============================================*/	
+	=============================================*/
 
-	public function manage(){
+	public function manage()
+	{
 
-		if(isset($_POST["module"])){
+		if (isset($_POST["module"])) {
 
 			echo '<script>
 
@@ -23,46 +25,46 @@ class DynamicController{
 			Editar datos
 			=============================================*/
 
-			if(isset($_POST["idItem"])){
+			if (isset($_POST["idItem"])) {
 
 				/*=============================================
 				Actualizar datos
 				=============================================*/
 
-				$url = $module->title_module."?id=".base64_decode($_POST["idItem"])."&nameId=id_".$module->suffix_module."&token=".$_SESSION["admin"]->token_admin."&table=admins&suffix=admin";
+				$url = $module->title_module . "?id=" . base64_decode($_POST["idItem"]) . "&nameId=id_" . $module->suffix_module . "&token=" . $_SESSION["admin"]->token_admin . "&table=admins&suffix=admin";
 				$method = "PUT";
 				$fields = "";
 				$count = 0;
 
 				foreach ($module->columns as $key => $value) {
 
-					if($value->type_column == "password" && !empty($_POST[$value->title_column])){
+					if ($value->type_column == "password" && !empty($_POST[$value->title_column])) {
 
-						$fields.= $value->title_column."=".crypt(trim($_POST[$value->title_column]),'$2a$07$azybxcags23425sdg23sdfhsd$')."&";
+						$fields .= $value->title_column . "=" . crypt(trim($_POST[$value->title_column]), '$2a$07$azybxcags23425sdg23sdfhsd$') . "&";
 
-					}else if($value->type_column == "email"){
+					} else if ($value->type_column == "email") {
 
-						$fields.= $value->title_column."=".trim($_POST[$value->title_column])."&";
+						$fields .= $value->title_column . "=" . trim($_POST[$value->title_column]) . "&";
 
-					}else{
-					
-						if(isset($_POST[$value->title_column])){
+					} else {
 
-							$fields.= $value->title_column."=".urlencode(trim($_POST[$value->title_column]))."&";
+						if (isset($_POST[$value->title_column])) {
+
+							$fields .= $value->title_column . "=" . urlencode(trim($_POST[$value->title_column])) . "&";
 
 						}
 
 					}
-					
+
 					$count++;
 
-					if($count == count($module->columns)){
+					if ($count == count($module->columns)) {
 
-						$fields = substr($fields,0,-1);
+						$fields = substr($fields, 0, -1);
 
-						$update = CurlController::request($url,$method,$fields);
+						$update = CurlController::request($url, $method, $fields);
 
-						if($update->status == 200){
+						if ($update->status == 200) {
 
 							echo '
 
@@ -70,16 +72,16 @@ class DynamicController{
 
 									fncMatPreloader("off");
 									fncFormatInputs();
-								    fncSweetAlert("success","El registro ha sido actualizado con éxito", setTimeout(()=>window.location="/'.$module->url_page.'",1000));
+								    fncSweetAlert("success","El registro ha sido actualizado con éxito", setTimeout(()=>window.location="/' . $module->url_page . '",1000));
 									
 
 								</script>
 
 							';
-							
-						}else{
-							
-							if($update->status == 303){
+
+						} else {
+
+							if ($update->status == 303) {
 
 								echo '
 
@@ -97,59 +99,71 @@ class DynamicController{
 							}
 						}
 					}
-				
+
 				}
 
 
-			}else{
-		
+			} else {
+
 				/*=============================================
 				Crear datos
 				=============================================*/
 
-				$url = $module->title_module."?token=".$_SESSION["admin"]->token_admin."&table=admins&suffix=admin";
+				$url = $module->title_module . "?token=" . $_SESSION["admin"]->token_admin . "&table=admins&suffix=admin";
 				$method = "POST";
 				$fields = array();
 				$count = 0;
-				
+
 				foreach ($module->columns as $key => $value) {
 
-					if($value->type_column == "password"){
+					if ($value->type_column == "password") {
 
-						if(isset($_POST[$value->title_column])){
+						if (isset($_POST[$value->title_column])) {
 
-							$fields[$value->title_column] = crypt(trim($_POST[$value->title_column]),'$2a$07$azybxcags23425sdg23sdfhsd$');
+							$fields[$value->title_column] = crypt(trim($_POST[$value->title_column]), '$2a$07$azybxcags23425sdg23sdfhsd$');
 
 						}
-					
-					}else if($value->type_column == "email"){
+
+					} else if ($value->type_column == "email") {
 
 						$fields[$value->title_column] = trim($_POST[$value->title_column]);
-					}else{
+					} else {
 						//&& $_POST[$value->title_column] != $_POST["servicio_table"]
-						if(isset($_POST[$value->title_column]) && $_POST[$value->title_column] != $_POST["salida_table"] && $_POST[$value->title_column] != $_POST["entrada_table"] && $_POST[$value->title_column] != $_POST["servicio_table"]){
+						$salida = $_POST["salida_table"] ?? null;
+						$entrada = $_POST["entrada_table"] ?? null;
+						$servicio = $_POST["servicio_table"] ?? null;
+
+						if (
+							isset($_POST[$value->title_column])
+							&& $_POST[$value->title_column] != $salida
+							&& $_POST[$value->title_column] != $entrada
+							&& $_POST[$value->title_column] != $servicio
+						) {
 
 							$fields[$value->title_column] = urlencode(trim($_POST[$value->title_column]));
 
-						}else{
-							$fields["servicio_table"] = $_POST["servicio_table"];
-							$fields["salida_table"] = $_POST["salida_table"];
-							$fields["entrada_table"] = $_POST["entrada_table"];
+						} else {
+							if ($servicio !== null)
+								$fields["servicio_table"] = $servicio;
+							if ($salida !== null)
+								$fields["salida_table"] = $salida;
+							if ($entrada !== null)
+								$fields["entrada_table"] = $entrada;
 						}
 
 					}
-					
+
 					$count++;
 
-					if($count == count($module->columns)){
+					if ($count == count($module->columns)) {
 
-						$fields["date_created_".$module->suffix_module] = date("Y-m-d");
+						$fields["date_created_" . $module->suffix_module] = date("Y-m-d");
 
-						$save = CurlController::request($url,$method,$fields);
+						$save = CurlController::request($url, $method, $fields);
 
 						echo "<script>console.log('" . $url . "');</script>";
-						echo '<script>console.log("' .print_r($fields, true). '");</script>';
-						if($save->status == 200){
+						echo '<script>console.log("' . print_r($fields, true) . '");</script>';
+						if ($save->status == 200) {
 
 							echo '
 
@@ -157,16 +171,16 @@ class DynamicController{
 
 									fncMatPreloader("off");
 									fncFormatInputs();
-								    fncSweetAlert("success","El registro ha sido guardado con éxito", setTimeout(()=>window.location="/'.$module->url_page.'",1000));
+								    fncSweetAlert("success","El registro ha sido guardado con éxito", setTimeout(()=>window.location="/' . $module->url_page . '",1000));
 									
 
 								</script>
 
 							';
-							
-						}else{
 
-							if($save->status == 303){
+						} else {
+
+							if ($save->status == 303) {
 
 								echo '
 
@@ -186,7 +200,7 @@ class DynamicController{
 
 						}
 					}
-				
+
 				}
 
 			}

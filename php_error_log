@@ -1,0 +1,344 @@
+[21-Jul-2026 17:01:12 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:12 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:17 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:17 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:18 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:18 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:18 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:18 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:19 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:19 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:21 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:21 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:21 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:21 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:21 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:21 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:22 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:22 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:25 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:25 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:30 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:30 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:32 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[21-Jul-2026 17:01:32 America/Bogota] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 426
+[22-Jul-2026 15:22:27 America/Bogota] PHP Warning:  Attempt to read property "url_page" on string in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 50
+[22-Jul-2026 15:22:27 America/Bogota] PHP Warning:  Attempt to read property "icon_page" on string in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 52
+[22-Jul-2026 15:24:20 America/Bogota] PHP Warning:  Attempt to read property "url_page" on string in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 50
+[22-Jul-2026 16:53:20 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 16:53:20 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 16:54:26 America/Bogota] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 16:54:26 America/Bogota] PHP Warning:  Attempt to read property "plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 16:54:26 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 16:58:34 America/Bogota] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 16:58:34 America/Bogota] PHP Warning:  Attempt to read property "plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 16:58:34 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 39
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "salida_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "entrada_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 17:08:23 America/Bogota] PHP Warning:  Undefined array key "servicio_table" in C:\xampp\htdocs\reservas_1\cms\controllers\dynamic.controller.php on line 130
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): open(C:\xampp\tmp\sess_ucmbdm5fdqkkhl0e6vjd9fkgi8, O_RDWR) failed: Permission denied (13) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): Failed to read session data: files (path: C:\xampp\tmp) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): open(C:\xampp\tmp\sess_ucmbdm5fdqkkhl0e6vjd9fkgi8, O_RDWR) failed: Permission denied (13) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): Failed to read session data: files (path: C:\xampp\tmp) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): open(C:\xampp\tmp\sess_ucmbdm5fdqkkhl0e6vjd9fkgi8, O_RDWR) failed: Permission denied (13) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): Failed to read session data: files (path: C:\xampp\tmp) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): open(C:\xampp\tmp\sess_ucmbdm5fdqkkhl0e6vjd9fkgi8, O_RDWR) failed: Permission denied (13) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): Failed to read session data: files (path: C:\xampp\tmp) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): open(C:\xampp\tmp\sess_ucmbdm5fdqkkhl0e6vjd9fkgi8, O_RDWR) failed: Permission denied (13) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:16 America/Bogota] PHP Warning:  session_start(): Failed to read session data: files (path: C:\xampp\tmp) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:17 America/Bogota] PHP Warning:  session_start(): open(C:\xampp\tmp\sess_ucmbdm5fdqkkhl0e6vjd9fkgi8, O_RDWR) failed: Permission denied (13) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:50:17 America/Bogota] PHP Warning:  session_start(): Failed to read session data: files (path: C:\xampp\tmp) in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 8
+[22-Jul-2026 18:51:21 America/Bogota] WhatsApp DEBUG - Phone original: diego gonzalez
+[22-Jul-2026 18:51:21 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[22-Jul-2026 18:51:21 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[22-Jul-2026 18:51:21 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[22-Jul-2026 18:51:21 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* diego gonzalez\n\ud83d\udcc5 *Fecha:* 29\/7\/2026\n\ud83d\udd50 *Hora:* 15:00\n\ud83d\udc86 *Especialista:* Prueba 1\n\ud83d\udd22 *N\u00b0 Reserva:* #2711784764280\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[22-Jul-2026 18:51:24 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[22-Jul-2026 18:51:24 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[22-Jul-2026 18:51:24 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSMDFEN0QwODJDMDJDOTdDNzQ5AA=="}]}
+[22-Jul-2026 18:52:56 America/Bogota] WhatsApp DEBUG - Phone original: diego gonzalez
+[22-Jul-2026 18:52:56 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[22-Jul-2026 18:52:56 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[22-Jul-2026 18:52:56 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[22-Jul-2026 18:52:56 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* diego gonzalez\n\ud83d\udcc5 *Fecha:* 29\/7\/2026\n\ud83d\udd50 *Hora:* 16:00\n\ud83d\udc86 *Especialista:* Prueba 1\n\ud83d\udd22 *N\u00b0 Reserva:* #7161784764375\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[22-Jul-2026 18:52:57 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[22-Jul-2026 18:52:57 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[22-Jul-2026 18:52:57 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSMjYzNTU4MjNGQkYwNDY2QjA4AA=="}]}
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 36
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "results" on null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\reservas_1\cms\views\template.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_admin" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\sidebar.php on line 42
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "status" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 9
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[22-Jul-2026 21:26:52 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[23-Jul-2026 10:34:23 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on string in C:\xampp\htdocs\reservas_1\cms\controllers\admins.controller.php on line 47
+[23-Jul-2026 10:34:26 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[23-Jul-2026 10:34:26 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[23-Jul-2026 10:34:26 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[23-Jul-2026 10:34:26 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[23-Jul-2026 10:34:29 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[23-Jul-2026 10:34:29 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[23-Jul-2026 10:34:29 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[23-Jul-2026 10:34:29 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[23-Jul-2026 10:35:23 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[23-Jul-2026 10:35:23 America/Bogota] PHP Warning:  Attempt to read property "title_plan" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 40
+[23-Jul-2026 10:35:23 America/Bogota] PHP Warning:  Undefined array key 0 in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[23-Jul-2026 10:35:23 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on null in C:\xampp\htdocs\reservas_1\cms\views\modules\modals\profile.php on line 44
+[23-Jul-2026 11:10:55 America/Bogota] PHP Warning:  Attempt to read property "transaction_order" on string in C:\xampp\htdocs\reservas_1\cms\views\pages\dynamic\custom\mesas\mesas.php on line 199
+[23-Jul-2026 11:10:55 America/Bogota] PHP Warning:  Attempt to read property "date_order" on string in C:\xampp\htdocs\reservas_1\cms\views\pages\dynamic\custom\mesas\mesas.php on line 203
+[23-Jul-2026 11:11:24 America/Bogota] PHP Warning:  Attempt to read property "transaction_order" on string in C:\xampp\htdocs\reservas_1\cms\views\pages\dynamic\custom\mesas\mesas.php on line 199
+[23-Jul-2026 11:11:24 America/Bogota] PHP Warning:  Attempt to read property "date_order" on string in C:\xampp\htdocs\reservas_1\cms\views\pages\dynamic\custom\mesas\mesas.php on line 203

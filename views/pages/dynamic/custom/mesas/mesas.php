@@ -31,7 +31,7 @@ if($_SESSION["admin"]->id_office_admin > 0){
     	$fields = array();
 
     	$getBooks = CurlController::request($url,$method,$fields);
-
+		//echo "<pre>"; print_r($getBooks); echo "</pre>";
     	if($getBooks->status == 200){
 
 	      $books = $getBooks->results;
@@ -178,7 +178,7 @@ if($_SESSION["admin"]->id_office_admin > 0){
 			                </span>
 			            </div>
 			            <div class="table-info">
-			              <p class="seats-info">Información: <?php echo $value->description_table ?></p>
+			              <p class="seats-info">Información: <?php echo urldecode($value->description_table) ?></p>
 
 			              <?php if ($value->status_table == "ocupada"): ?>
 

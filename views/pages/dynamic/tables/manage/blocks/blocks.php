@@ -6,7 +6,7 @@
 			<?php echo $module->columns[$i]->alias_column ?>:
 		</label>
 		<span class="float-end badge badge-default border small rounded text-muted">
-			<?php echo $module->columns[$i]->type_column ?>
+			<?php //echo $module->columns[$i]->type_column ?>
 		</span>
 		<div class="clearfix"></div>
 

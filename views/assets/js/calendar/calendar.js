@@ -187,8 +187,14 @@ $(document).ready(function () {
         $(`.calendar-day[data-date="${date.toISOString()}"]`).addClass('selected');
 
         $("#date_book").val(date.toLocaleDateString());
+        $("#modalFechaSeleccionada").text(date.toLocaleDateString('es-ES', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        }));
 
         loadSelectedDateReservations();
+        // Abrir el modal de reserva
+        const modalReserva = new bootstrap.Modal(document.getElementById('modalNuevaReserva'));
+        modalReserva.show();
 
     }
 
@@ -359,9 +365,13 @@ modalCambiarEstado.addEventListener('show.bs.modal', function (event) {
         setupEventListeners();
         loadSelectedDateReservations();
 
-        // Seleccionar fecha de hoy por defecto
-        const today = new Date();
-        selectDate(today);
+        // Seleccionar fecha de hoy por defecto SIN abrir el modal
+    const today = new Date();
+    selectedDate = today;
+    $('.calendar-day').removeClass('selected');
+    $(`.calendar-day[data-date="${today.toISOString()}"]`).addClass('selected');
+    $("#date_book").val(today.toLocaleDateString());
+    loadSelectedDateReservations();
 
     }
 
@@ -488,6 +498,7 @@ function bloquearHorasOcupadas(nombreEspecialista, fechaSeleccionada) {
     const reservations = JSON.parse(document.getElementById('reservationsDatabase').value);
     const selectHora = document.getElementById('time_book');
 
+    console.log(reservations);
     Array.from(selectHora.options).forEach(opt => {
         opt.disabled = false;
         opt.textContent = opt.textContent.replace(' (ocupado)', '');
@@ -508,6 +519,53 @@ function bloquearHorasOcupadas(nombreEspecialista, fechaSeleccionada) {
             }
         });
     });
+}
+
+// ─── Bloquear horas ocupadas en el select ───────────────────────────
+function bloquearHorasOcupadas_2(nombreEspecialista, fechaSeleccionada) {
+    const reservations = JSON.parse(document.getElementById('reservationsDatabase').value);
+    const selectHora = document.getElementById('time_book');
+
+    // Reset general
+    Array.from(selectHora.options).forEach(opt => {
+        opt.disabled = false;
+        opt.textContent = opt.textContent.replace(' (ocupado)', '').replace(' (no disponible)', '');
+    });
+
+    if (!fechaSeleccionada) return;
+
+    // ── 1. Bloquear por reservas existentes (excluyendo canceladas) ──
+    const reservasDelDia = (reservations[fechaSeleccionada] || [])
+        .filter(r => r.table === nombreEspecialista && String(r.confirmado) !== "2");
+
+    reservasDelDia.forEach(r => {
+        const minReserva = parseTime12(r.time);
+        Array.from(selectHora.options).forEach(opt => {
+            if (!opt.value) return;
+            if (parseTime24(opt.value) === minReserva) {
+                opt.disabled = true;
+                opt.textContent += ' (ocupado)';
+            }
+        });
+    });
+
+    // ── 2. Bloquear horas pasadas si la fecha seleccionada es HOY ──
+    const hoy = new Date();
+    const fechaHoyStr = hoy.toISOString().split('T')[0]; // formato YYYY-MM-DD
+    console.log(fechaHoyStr);
+    if (fechaSeleccionada === fechaHoyStr) {
+        const minutosAhora = hoy.getHours() * 60 + hoy.getMinutes();
+        console.log(minutosAhora);
+        Array.from(selectHora.options).forEach(opt => {
+            if (!opt.value) return;
+            if (parseTime24(opt.value) < minutosAhora) {
+                opt.disabled = true;
+                if (!opt.textContent.includes('(ocupado)')) {
+                    opt.textContent += ' (no disponible)';
+                }
+            }
+        });
+    }
 }
 
 // ─── Renderizar tarjeta ──────────────────────────────────────────────
@@ -535,9 +593,9 @@ function renderTarjeta(especialista, estado, reserva) {
                      class="tarjeta-img"
                      onerror="this.style.display='none'">
                 <span class="tarjeta-nombre">${especialista.especialista}</span>
-                <span class="badge ${clase}">${texto}</span>
+                
             </div>
-            <p class="tarjeta-desc">Información_ Hola: ${especialista.descripcion}</p>
+            <p class="tarjeta-desc">Información: ${especialista.descripcion}</p>
             ${infoExtra}
          
         </div>`;
@@ -561,12 +619,12 @@ function actualizarTarjetaYHoras() {
     contenedor.innerHTML = renderTarjeta(especialista, estado, reserva);
 
     // Horas: bloqueadas según la fecha elegida en el calendario
-    bloquearHorasOcupadas(especialista.especialista, fechaElegida);
+    bloquearHorasOcupadas_2(especialista.especialista, fechaElegida);
 
     const btn = contenedor.querySelector('.tarjeta-btn:not(:disabled)');
     if (btn) {
         btn.addEventListener('click', () => {
-            //console.log('Turno para especialista id:', especialista.id);
+            console.log('Turno para especialista id:', especialista.id);
             // Tu lógica AJAX aquí
         });
     }

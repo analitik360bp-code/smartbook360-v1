@@ -165,9 +165,9 @@ Cargamos el módulo tabla
 						<a href="/<?php echo $module->url_page ?>/manage" class="btn btn-default btn-sm rounded backColor px-3 py-2">Agregar registro
 						</a>
 
-						<button class="btn btn-default btn-sm rounded bg-success px-3 py-2 ms-2 modalExcel" titleTable="<?php echo $module->title_module ?>">
-							<i class="bi bi-file-earmark-excel-fill"></i> Subir Excel
-						</button>
+						<div class="btn btn-default btn-sm rounded  px-3 py-2 ms-2  display-none">
+							 <!-- <i class="bi bi-file-earmark-excel-fill"></i> Subir Excel -->
+						</div>
 						
 					<?php endif ?>
 					
