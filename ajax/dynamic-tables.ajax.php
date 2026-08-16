@@ -110,14 +110,14 @@ class DynamicTablesController{
 
 				if($this->idOffice > 0 && $module->title_module == "offices"){
 
-					$url = $module->title_module."?orderBy=id_".$module->suffix_module."&orderMode=DESC&startAt=0&endAt=".$limit."&linkTo=id_office&equalTo=".$this->idOffice;
+					$url = $module->title_module."?orderBy=id_".$module->suffix_module."&orderMode=DESC&startAt=0&endAt=".$this->limit."&linkTo=id_office&equalTo=".$this->idOffice;
 						
 				}else{
 
 					if($this->idOffice == 0 || 
 						!in_array("id_office_".$module->suffix_module, array_column($module->columns, "title_column"))){
-
-						$url = $module->title_module."?linkTo=".$value."&search=".str_replace(" ", "_", $this->search)."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit;
+					
+							$url = $module->title_module."?linkTo=".$value."&search=".str_replace(" ", "_", $this->search)."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit;
 
 					}else{
 
@@ -148,8 +148,8 @@ class DynamicTablesController{
 
 						if($this->idOffice == 0 ||
 						   !in_array("id_office_".$module->suffix_module, array_column($module->columns, "title_column"))){
-					
-							$url = $module->title_module."?linkTo=".$value."&search=".str_replace(" ", "_", $this->search)."&select=id_".$module->suffix_module;
+						
+								$url = $module->title_module."?linkTo=".$value."&search=".str_replace(" ", "_", $this->search)."&select=id_".$module->suffix_module;
 
 						}else{
 
@@ -180,15 +180,26 @@ class DynamicTablesController{
 			}else{
 
 				if($this->idOffice == 0 || !in_array("id_office_".$module->suffix_module, array_column($module->columns, "title_column"))){
+					
+					if($module->suffix_module == "book"){
 
-					$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit;	
+						$url = $module->title_module."?linkTo=date_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit;	
+
+						
+					}else{
+						$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit;	
+					}
 					
 
 				}else{
 
-					$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit."&filterTo=id_office_".$module->suffix_module."&inTo=".$this->idOffice;	
+					if($module->suffix_module == "book"){
+						$url = $module->title_module."?linkTo=date_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit."&filterTo=id_office_".$module->suffix_module."&inTo=".$this->idOffice;	
+					}else{
+						$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&orderBy=".$this->orderBy."&orderMode=".$this->orderMode."&startAt=".$startAt."&endAt=".$this->limit."&filterTo=id_office_".$module->suffix_module."&inTo=".$this->idOffice;	
+					}
+					
 				}	
-
 			}
 	
 			$method = "GET";
@@ -207,18 +218,27 @@ class DynamicTablesController{
 				if($this->idOffice > 0 && $module->title_module == "offices"){
 
 					$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&select=id_".$module->suffix_module."&filterTo=id_office&inTo=".$this->idOffice;
+
 				}else{
 
 					if($this->idOffice == 0 || 
 						!in_array("id_office_".$module->suffix_module, array_column($module->columns, "title_column"))){
-				
-						$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&select=id_".$module->suffix_module;
+						if($module->suffix_module == "book"){
 
-					}else{
+							$url = $module->title_module."?linkTo=date_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&select=id_".$module->suffix_module;
 
-						$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&select=id_".$module->suffix_module."&filterTo=id_office_".$module->suffix_module."&inTo=".$this->idOffice;
+						}else{
+							$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&select=id_".$module->suffix_module;
+						}
+
+					}else{			
+
+						if($module->suffix_module == "book"){
+							$url = $module->title_module."?linkTo=date_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&select=id_".$module->suffix_module."&filterTo=id_office_".$module->suffix_module."&inTo=".$this->idOffice;
+						}else{
+							$url = $module->title_module."?linkTo=date_created_".$module->suffix_module."&between1=".$this->between1."&between2=".$this->between2."&select=id_".$module->suffix_module."&filterTo=id_office_".$module->suffix_module."&inTo=".$this->idOffice;
+						}
 					}
-
 				}
 
 				$totalData = CurlController::request($url,$method,$fields)->total;

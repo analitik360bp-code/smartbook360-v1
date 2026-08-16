@@ -81,13 +81,13 @@ class BooksController
 							'time' => $_POST["time_book"],
 							'specialist' => $specialistName
 						];
-						
+
 						require_once "controllers/whatsapp.controller.php";
 						$wa = WhatsAppController::sendBookingConfirmation(
 							$_POST["phone_book"],
 							$bookData
 						);
-						
+
 						// Log opcional — no bloqueamos el flujo si falla el WA
 						if ($wa->status !== 200) {
 							error_log("WhatsApp fallo [reserva #{$num_book}]: " . json_encode($wa->response));
@@ -105,14 +105,14 @@ class BooksController
 					';
 				}
 
-				if($createBook->status == 200){
+				if ($createBook->status == 200) {
 
 					$subject = "Confirmación de reserva";
 					$email = $_POST["email_book"];
 					$title = 'Confirmación de reserva';
 					$message = '
 					<div style="color:#555; font-size:16px; line-height:24px; padding: 0 20px;">
-						<p>Hola <strong>'.$_POST["client_book"].'</strong>,</p>
+						<p>Hola <strong>' . $_POST["client_book"] . '</strong>,</p>
 						<p>Tu cita ha sido agendada con éxito. A continuación te compartimos los detalles de tu reserva:</p>
 
 						<!-- Caja de detalles de la reserva -->
@@ -120,12 +120,12 @@ class BooksController
 							
 							<p style="margin: 0 0 10px 0;">
 								<span style="font-size: 18px;">👨‍💼</span> <strong>Especialista:</strong><br>
-								<span style="color: #333;">'.$specialistName.'</span>
+								<span style="color: #333;">' . $specialistName . '</span>
 							</p>
 
 							<p style="margin: 0 0 10px 0;">
 								<span style="font-size: 18px;">📅</span> <strong>Fecha y Hora:</strong><br>
-								<span style="color: #333;">'.$_POST["date_book"].' '.$_POST["time_book"].'</span>
+								<span style="color: #333;">' . $_POST["date_book"] . ' ' . $_POST["time_book"] . '</span>
 							</p>
 
 						</div>
@@ -135,11 +135,11 @@ class BooksController
 					
 					<h4 style="font-weight: 100; color:#999; padding:0px 20px">Ingrese para confirmar o cancelar su reserva</4>';
 					$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-					$link = $scheme . "://" . $_SERVER["SERVER_NAME"]."/confirmacion?id=".$num_book;
+					$link = $scheme . "://" . $_SERVER["SERVER_NAME"] . "/confirmacion?id=" . $num_book;
 
 					$sendEmail = TemplateController::sendEmail($subject, $email, $title, $message, $link, "SmartBook-Analitik360");
 
-					if($sendEmail == "ok"){
+					if ($sendEmail == "ok") {
 
 						echo '<script>
 
@@ -150,13 +150,13 @@ class BooksController
 							</script>
 						';
 
-					}else{
+					} else {
 
 						echo '<script>
 
 							fncFormatInputs();
 							fncMatPreloader("off");
-							fncNotie("error", "'.$sendEmail.'");
+							fncNotie("error", "' . $sendEmail . '");
 
 							</script>
 						';
@@ -187,7 +187,7 @@ class BooksController
 	{
 		if (isset($_POST["id"])) {
 
-			$url_book = "books?token=no&except=num_book&id=".$_POST["id"]."&nameId=num_book";
+			$url_book = "books?token=no&except=num_book&id=" . $_POST["id"] . "&nameId=num_book";
 			$method_book = "PUT";
 			$fields_book = array(
 				"confirm_book" => "1"
@@ -200,7 +200,7 @@ class BooksController
 				echo '<script>
 						fncMatPreloader("off");
 						fncFormatInputs();
-						fncSweetAlert("success","La confirmación de su reserva ha sido un éxito",setTimeout(()=>location.href = "confirmacion/confirm?id='.$_POST["id"].'",1250));  
+						fncSweetAlert("success","La confirmación de su reserva ha sido un éxito",setTimeout(()=>location.href = "confirmacion/confirm?id=' . $_POST["id"] . '",1250));  
 					</script>';
 
 			} else {
@@ -212,8 +212,7 @@ class BooksController
 	public function cancelBook()
 	{
 		if (isset($_POST["id"])) {
-			echo "<script>console.log('ID: " . $_POST["id"] . "');</script>";
-			$url_cancel = "books?token=no&except=num_book&id=".$_POST["id"]."&nameId=num_book";
+			$url_cancel = "books?token=no&except=num_book&id=" . $_POST["id"] . "&nameId=num_book";
 			$method_cancel = "PUT";
 			$fields_cancel = array(
 				"confirm_book" => "2",
@@ -240,19 +239,19 @@ class BooksController
 	{
 		if (isset($_POST["id"])) {
 
-			$url_cancel = "books?token=no&except=num_book&id=".$_POST["id"]."&nameId=num_book";
+			$url_cancel = "books?token=no&except=num_book&id=" . $_POST["id"] . "&nameId=num_book";
 			$method_cancel = "PUT";
-			if($_POST["confirmado"] == "1"){
+			if ($_POST["confirmado"] == "1") {
 				$fields_cancel = array(
 					"confirm_book" => "1",
 				);
-			}else{
+			} else {
 				$fields_cancel = array(
 					"confirm_book" => "2",
 					"id_motivo_book" => $_POST["motivo_cancelacion"]
 				);
 			}
-			
+
 			$fields_cancel = http_build_query($fields_cancel);
 			$bookUpdate = CurlController::request($url_cancel, $method_cancel, $fields_cancel);
 
@@ -270,4 +269,94 @@ class BooksController
 		}
 	}
 
+	public function reprogramBook_Admin()
+	{
+		if (isset($_POST["id"]) && isset($_POST["nueva_fecha"]) && isset($_POST["nueva_hora"])) {
+
+			$nuevaFecha = DateTime::createFromFormat('Y-m-d', $_POST["nueva_fecha"])->format('Y-m-d');
+			$nuevaHora = $_POST["nueva_hora"];
+
+			// Verificar que la nueva fecha/hora no esté ocupada
+			$url = "books?linkTo=id_table_book,date_book,time_book,confirm_book&equalTo="
+				. $_POST["id_table_book"] . "," . $nuevaFecha . "," . $nuevaHora . ",1&select=id_book";
+			$getBook = CurlController::request($url, "GET", []);
+
+			if ($getBook->status == 200) {
+				echo '<script>
+					fncMatPreloader("off");
+					fncToastr("error", "Ese horario ya está ocupado, selecciona otro.");
+				</script>';
+			}
+
+			$url = "books?token=no&except=num_book&id=" . $_POST["id"] . "&nameId=num_book";
+			$fields = http_build_query([
+				"date_book" => $nuevaFecha,
+				"time_book" => $nuevaHora,
+				"confirm_book" => "0"   // vuelve a pendiente tras reprogramar
+			]);
+
+			$update = CurlController::request($url, "PUT", $fields);
+
+			if ($update->status == 200) {
+				echo '	
+				<script>
+						fncMatPreloader("off");
+						fncFormatInputs();
+						fncSweetAlert("success","La reserva ha sido creada con éxito",setTimeout(()=>location.reload(),1250));  
+					</script>';
+			} else {
+				echo '<script>
+					fncMatPreloader("off");
+					fncToastr("error", "Error al reprogramar la reserva.");
+				</script>';
+			}
+		}
+	}
+
+	public function reprogramBook_Usuario()
+	{
+		if (isset($_POST["id"]) && isset($_POST["nueva_fecha"]) && isset($_POST["nueva_hora"])) {
+
+			$nuevaFecha = DateTime::createFromFormat('Y-m-d', $_POST["nueva_fecha"])->format('Y-m-d');
+			$nuevaHora = $_POST["nueva_hora"];
+
+			// Verificar que la nueva fecha/hora no esté ocupada
+			$url = "books?linkTo=id_table_book,date_book,time_book,confirm_book&equalTo="
+				. $_POST["id_table_book"] . "," . $nuevaFecha . "," . $nuevaHora . ",1&select=id_book";
+			$getBook = CurlController::request($url, "GET", []);
+
+			if ($getBook->status == 200) {
+				echo '<script>
+					fncMatPreloader("off");
+					fncToastr("error", "Ese horario ya está ocupado, selecciona otro.");
+				</script>';
+			}
+
+			$url = "books?token=no&except=num_book&id=" . $_POST["id"] . "&nameId=num_book";
+			$fields = http_build_query([
+				"date_book" => $nuevaFecha,
+				"time_book" => $nuevaHora,
+				"confirm_book" => "0"   // vuelve a pendiente tras reprogramar
+			]);
+
+			$update = CurlController::request($url, "PUT", $fields);
+
+			if ($update->status == 200) {
+				echo '	
+				<script>
+						fncMatPreloader("off");
+						fncFormatInputs();
+						fncSweetAlert("success","La reserva ha sido creada con éxito",setTimeout(()=>location.reload(),1250));  
+					</script>';
+			} else {
+				echo '<script>
+					fncMatPreloader("off");
+					fncToastr("error", "Error al reprogramar la reserva.");
+				</script>';
+			}
+		}
+	}
+
 }
+
+

@@ -195,8 +195,8 @@ $('#daterange-btn').daterangepicker({
 	      'Este Año': [moment().startOf('year'), moment().endOf('year')],
 	      'Último Año'  : [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')],
 	    },
-	    startDate: moment($("#between1").val()),
-	    endDate  : moment($("#between2").val())
+	    startDate: moment($("#between1").val() || moment().subtract(1, 'year').startOf('year')),
+	    endDate  : moment($("#between2").val() || moment().subtract(1, 'year').endOf('year'))
 
 	},
 	function (start, end){
@@ -321,7 +321,6 @@ function loadAjaxTable(contentModule,orderBy,orderMode,limit,page,filter,search,
 				if((Number($("#startItems").html())-1)+Number(limit) > JSON.parse(response).totalData){
 
 					$("#endItems").html(JSON.parse(response).totalData);
-
 				}else{
 
 					$("#endItems").html((Number($("#startItems").html())-1)+Number(limit));

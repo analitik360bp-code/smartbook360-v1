@@ -76,7 +76,6 @@ if($table->status == 200){
 	if($module->title_module == "offices" && $_SESSION["admin"]->id_office_admin > 0){
 	
 		$url = $module->title_module."?linkTo=id_".$module->suffix_module."&equalTo=".$_SESSION["admin"]->id_office_admin."&select=id_".$module->suffix_module;
-
 	}else{
 
 		if($_SESSION["admin"]->id_office_admin == 0 || 
@@ -190,7 +189,7 @@ Cargamos el módulo tabla
 								<i class="far fa-calendar-alt me-1"></i>
 
 								<small>
-									<span id="startDate"><?php echo date("Y-m-d", 0) ?></span>
+									<span id="startDate"><?php echo date("Y-m-d", strtotime("-1 month")) ?></span>
 									-
 									<span id="endDate"><?php echo date("Y-m-d") ?></span>
 									<i class="fas fa-caret-down ms-1"></i>
@@ -294,8 +293,8 @@ Cargamos el módulo tabla
 		    <input type="hidden" id="limitTable" value="<?php echo $limit ?>">
 		    <input type="hidden" id="rolAdmin" value="<?php echo $_SESSION["admin"]->rol_admin ?>">
 		    <input type="hidden" id="searchTable" value="">
-		    <input type="hidden" id="between1" value="<?php echo date("Y-m-d", 0) ?>">
-		    <input type="hidden" id="between2" value="<?php echo date("Y-m-d") ?>">
+		    <input type="hidden" id="between1" value="<?= date('Y-01-01') ?>">
+		    <input type="hidden" id="between2" value="<?= date('Y-12-31') ?>">
 		    <input type="hidden" id="checkItems" value="" table="<?php echo $module->title_module ?>" suffix="<?php echo $module->suffix_module ?>">
 
 			<!--=========================================

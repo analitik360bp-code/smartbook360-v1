@@ -3,7 +3,7 @@
  	<input 
 	type="number" 
 	step="any"
-	class="form-control rounded <?php if ($module->columns[$i]->title_column == "qty_purchase" || $module->columns[$i]->title_column == "cost_purchase"): ?> changePurchase <?php endif ?><?php if($module->columns[$i]->title_column == "cost_food" || $module->columns[$i]->title_column == "products_food"): ?> changeUtilityFood_ <?php endif?>"
+	class="form-control rounded <?php if ($module->columns[$i]->title_column == "qty_purchase" || $module->columns[$i]->title_column == "cost_purchase"): ?> changePurchase <?php endif ?><?php if($module->columns[$i]->title_column == "utility_food" || $module->columns[$i]->title_column == "products_food"): ?> changeUtilityFood_ <?php endif?>"
 	<?php if ($module->columns[$i]->title_column == "unit_cost_purchase" || $module->columns[$i]->title_column == "stock_purchase"  || $module->columns[$i]->title_column == "price_food"): ?> readonly <?php endif ?>
 	id="<?php echo $module->columns[$i]->title_column ?>"
 	name="<?php echo $module->columns[$i]->title_column ?>"

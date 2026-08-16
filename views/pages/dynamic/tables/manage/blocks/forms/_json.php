@@ -249,7 +249,7 @@
 
 														<?php foreach (json_decode(json_encode($ingredients),true) as $num => $elem):  ?>
 
-															<option value="<?php echo $elem["title_".$suffix] ?>^<?php echo $elem["id_".$suffix] ?>^<?php echo $elem["price_".$suffix] ?>^<?php echo $elem["id_category_".$suffix] ?>^<?php echo $elem["img_".$suffix] ?>"
+															<option value="<?php echo $elem["title_".$suffix] ?>^<?php echo $elem["id_".$suffix] ?>^<?php echo $elem["price_".$suffix] ?>^<?php echo $elem["id_category_".$suffix] ?>^<?php echo $elem["img_".$suffix] ?>^<?php echo $elem["time_".$suffix] ?>"
 																<?php if (urldecode(explode("^",json_decode(json_encode($arrayObj[$key]),true)[$item])[0]) == urldecode($elem["title_".$suffix])): ?>
 																selected	
 																<?php endif ?>
@@ -645,7 +645,7 @@
 
 												<?php foreach (json_decode(json_encode($ingredients),true) as $num => $elem):  ?>
 
-													<option value="<?php echo $elem["title_".$suffix] ?>^<?php echo $elem["id_".$suffix] ?>^<?php echo $elem["price_".$suffix] ?>^<?php echo $elem["id_category_".$suffix] ?>^<?php echo $elem["img_".$suffix] ?>"><?php echo urldecode($elem["title_".$suffix]) ?></option>
+													<option value="<?php echo $elem["title_".$suffix] ?>^<?php echo $elem["id_".$suffix] ?>^<?php echo $elem["price_".$suffix] ?>^<?php echo $elem["id_category_".$suffix] ?>^<?php echo $elem["img_".$suffix] ?>^<?php echo $elem["time_".$suffix] ?>"><?php echo urldecode($elem["title_".$suffix]) ?></option>
 													
 												<?php endforeach ?>
 												

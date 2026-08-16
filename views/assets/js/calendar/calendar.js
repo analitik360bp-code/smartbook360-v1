@@ -280,11 +280,16 @@ $(document).ready(function () {
                                     ? '<span class="badge bg-danger">Cancelada</span>'
                                     : `
                             <button type="button" 
-                                    class="btn btn-sm p-0 border-0 alignment-baseline" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#modalCambiarEstado" 
-                                    data-id="${reservation.num_book}">
-                                <span class="badge bg-warning text-dark style="cursor: pointer;">
+                                class="btn btn-sm p-0 border-0 alignment-baseline" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#modalCambiarEstado" 
+                                data-id="${reservation.num_book}"
+                                data-cliente="${reservation.customerClient}"
+                                data-especialista="${reservation.table}"
+                                data-fecha="${reservation.date_book}"
+                                data-id-table="${reservation.idTable}"
+                                data-hora="${reservation.time}">
+                                <span class="badge bg-warning text-dark" style="cursor: pointer;">
                                     Pendiente 🔄
                                 </span>
                             </button>`
@@ -441,31 +446,44 @@ $(document).on("click", "#calendarDays .calendar-day", function () {
 function poblarHoras(idEspecialista) {
     const select = $("#time_book");
     select.empty().append('<option value="">Seleccionar hora</option>');
-
     if (!idEspecialista || !tablesDatabase[idEspecialista]) return;
-
     const especialista = tablesDatabase[idEspecialista][0];
-
     especialista.horas.forEach(hora => {
         const label = new Date(`2000-01-01T${hora}:00`)
             .toLocaleTimeString('es-CO', { hour: 'numeric', minute: '2-digit', hour12: true });
-        select.append(`<option value="${hora}">${label}</option>`);
+        select.append(`<option value="${hora}" data-label="${label}">${label}</option>`);
     });
 }
 
 // ─── Utilidades de tiempo ───────────────────────────────────────────
 function parseTime12(str) {
-    const [time, meridiem] = str.trim().split(' ');
-    let [h, m] = time.split(':').map(Number);
-    if (meridiem === 'PM' && h !== 12) h += 12;
-    if (meridiem === 'AM' && h === 12) h = 0;
+    if (!str) return null;
+
+    // Normaliza "3:00 p. m." → "3:00 PM"
+    const normalized = str
+        .replace(/\s*p\.\s*m\.?/gi, ' PM')
+        .replace(/\s*a\.\s*m\.?/gi, ' AM')
+        .trim();
+
+    const match = normalized.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+    if (!match) return null;
+
+    let h = parseInt(match[1]);
+    const m = parseInt(match[2]);
+    const period = match[3].toUpperCase();
+
+    if (period === 'PM' && h !== 12) h += 12;
+    if (period === 'AM' && h === 12) h = 0;
+
     return h * 60 + m;
 }
 
 function parseTime24(str) {
+  if (!str) return null;
     const [h, m] = str.split(':').map(Number);
     return h * 60 + m;
 }
+
 
 // ─── Obtener fecha seleccionada del calendario ───────────────────────
 function getFechaSeleccionada() {
@@ -493,56 +511,32 @@ function getEstadoEspecialista(nombre, reservations) {
     return { estado: 'reservado', reserva: reservasHoy[0] };
 }
 
-// ─── Bloquear horas ocupadas en el select ───────────────────────────
-function bloquearHorasOcupadas(nombreEspecialista, fechaSeleccionada) {
-    const reservations = JSON.parse(document.getElementById('reservationsDatabase').value);
-    const selectHora = document.getElementById('time_book');
-
-    console.log(reservations);
-    Array.from(selectHora.options).forEach(opt => {
-        opt.disabled = false;
-        opt.textContent = opt.textContent.replace(' (ocupado)', '');
-    });
-
-    if (!fechaSeleccionada) return;
-
-    const reservasDelDia = (reservations[fechaSeleccionada] || [])
-        .filter(r => r.table === nombreEspecialista);
-
-    reservasDelDia.forEach(r => {
-        const minReserva = parseTime12(r.time);
-        Array.from(selectHora.options).forEach(opt => {
-            if (!opt.value) return;
-            if (parseTime24(opt.value) === minReserva) {
-                opt.disabled = true;
-                opt.textContent += ' (ocupado)';
-            }
-        });
-    });
-}
 
 // ─── Bloquear horas ocupadas en el select ───────────────────────────
 function bloquearHorasOcupadas_2(nombreEspecialista, fechaSeleccionada) {
     const reservations = JSON.parse(document.getElementById('reservationsDatabase').value);
     const selectHora = document.getElementById('time_book');
-
+    
     // Reset general
     Array.from(selectHora.options).forEach(opt => {
         opt.disabled = false;
-        opt.textContent = opt.textContent.replace(' (ocupado)', '').replace(' (no disponible)', '');
+        const original = opt.getAttribute('data-label');
+        if (original) opt.textContent = original;
+      opt.textContent = opt.textContent.replace(' (ocupado)', '').replace(' (no disponible)', '');
     });
 
     if (!fechaSeleccionada) return;
 
     // ── 1. Bloquear por reservas existentes (excluyendo canceladas) ──
     const reservasDelDia = (reservations[fechaSeleccionada] || [])
-        .filter(r => r.table === nombreEspecialista && String(r.confirmado) !== "2");
-
+        .filter(r => r.idTable === nombreEspecialista && String(r.confirmado) !== "2");
     reservasDelDia.forEach(r => {
         const minReserva = parseTime12(r.time);
+
         Array.from(selectHora.options).forEach(opt => {
             if (!opt.value) return;
-            if (parseTime24(opt.value) === minReserva) {
+            const minOpt = parseTime24(opt.value);
+            if (minOpt === minReserva) {
                 opt.disabled = true;
                 opt.textContent += ' (ocupado)';
             }
@@ -550,19 +544,19 @@ function bloquearHorasOcupadas_2(nombreEspecialista, fechaSeleccionada) {
     });
 
     // ── 2. Bloquear horas pasadas si la fecha seleccionada es HOY ──
-    const hoy = new Date();
-    const fechaHoyStr = hoy.toISOString().split('T')[0]; // formato YYYY-MM-DD
-    console.log(fechaHoyStr);
-    if (fechaSeleccionada === fechaHoyStr) {
-        const minutosAhora = hoy.getHours() * 60 + hoy.getMinutes();
-        console.log(minutosAhora);
+    //const hoy = new Date();
+    const hoy = new Date().toISOString().split('T')[0];
+
+    if (fechaSeleccionada === hoy) {
+        const minutosAhora = new Date().getHours() * 60 + new Date().getMinutes();
+        console.log("Minutos ahora:", minutosAhora);
         Array.from(selectHora.options).forEach(opt => {
             if (!opt.value) return;
+            console.log("Valor de la opción:", opt.value);
+            console.log("Minutos de la opción:", parseTime24(opt.value));
             if (parseTime24(opt.value) < minutosAhora) {
                 opt.disabled = true;
-                if (!opt.textContent.includes('(ocupado)')) {
-                    opt.textContent += ' (no disponible)';
-                }
+                if (!opt.textContent.includes('(ocupado)')) opt.textContent += ' (no disponible)';
             }
         });
     }
@@ -619,8 +613,7 @@ function actualizarTarjetaYHoras() {
     contenedor.innerHTML = renderTarjeta(especialista, estado, reserva);
 
     // Horas: bloqueadas según la fecha elegida en el calendario
-    bloquearHorasOcupadas_2(especialista.especialista, fechaElegida);
-
+    bloquearHorasOcupadas_2(especialista.id, fechaElegida);
     const btn = contenedor.querySelector('.tarjeta-btn:not(:disabled)');
     if (btn) {
         btn.addEventListener('click', () => {
@@ -650,7 +643,6 @@ function openWhatsAppConfirmation(phone, clientName, date, time, specialist, num
 //---------------------------
 // Función para agregar servicios a la reserva
 //---------------------------
-//serviciosActivos = {};
 
 function parsearServicios(serviciosStr) {
     try {
@@ -662,7 +654,8 @@ function parsearServicios(serviciosStr) {
                 id: parts[1],
                 precio: parseInt(parts[2]),
                 categoria: parts[3],
-                imagen: parts[4]
+                imagen: parts[4],
+                tiempo: parts[5]
             };
         });
     } catch (e) {
@@ -680,16 +673,19 @@ function renderCotizador(idEspecialista) {
     if (!especialista || !especialista.servicios) return;
 
     const servicios = parsearServicios(especialista.servicios);
-
+    
     servicios.forEach(s => {
         contenedor.append(`
             <div class="cotizador-item d-flex align-items-center gap-2 p-2 border rounded mb-2" id="item_${s.id}">
-                <img src="${s.imagen}" style="width:40px;height:40px;object-fit:cover;border-radius:6px;" 
-                     onerror="this.src='https://placehold.co/40x40'">
-                <span class="flex-grow-1">${s.nombre}</span>
+                <!--<img src="${s.imagen}" style="width:40px;height:40px;object-fit:cover;border-radius:6px;" 
+                     onerror="this.src='https://placehold.co/40x40'">-->
+                <div class="d-flex flex-column flex-grow-1">
+                    <span class="fw-medium">${s.nombre}</span>
+                    <small class="text-muted" style="font-size: 0.8em;">Tiempo Aprox.: ${s.tiempo}</small>
+                </div>
                 <span class="fw-bold">$${s.precio.toLocaleString('es-CO')}</span>
                 <button type="button" class="btn btn-success btn-sm btn-agregar" 
-                        data-id="${s.id}" data-precio="${s.precio}" data-nombre="${s.nombre}">
+                        data-id="${s.id}" data-precio="${s.precio}" data-nombre="${s.nombre}" data-tiempo="${s.tiempo}">
                     <i class="fas fa-plus"></i>
                 </button>
                 <button type="button" class="btn btn-danger btn-sm btn-remover d-none" 
@@ -697,6 +693,7 @@ function renderCotizador(idEspecialista) {
                     <i class="fas fa-minus"></i>
                 </button>
             </div>
+
         `);
     });
 }
@@ -706,8 +703,16 @@ $(document).on("click", ".btn-agregar", function () {
     const id = $(this).data("id").toString();
     const precio = parseInt($(this).data("precio"));
     const nombre = $(this).data("nombre");
+    const tiempo = $(this).data("tiempo");
 
-    serviciosActivos[id] = { id, nombre, precio };
+    let tempo = 0;
+    if      (tiempo == "30min")    tempo = 0.5;
+    else if (tiempo == "1h")    tempo = 1;
+    else if (tiempo == "1h:30min") tempo = 1.5;
+    else if (tiempo == "2h")   tempo = 2;
+
+
+    serviciosActivos[id] = { id, nombre, precio, tempo };
 
     // Intercambiar botones
     $(this).addClass("d-none");
@@ -729,11 +734,160 @@ $(document).on("click", ".btn-remover", function () {
     actualizarTotal();
 });
 
+
 function actualizarTotal() {
     const serviciosSeleccionados = Object.values(serviciosActivos);
-    const total = serviciosSeleccionados.reduce((sum, s) => sum + s.precio, 0);
-
+    const total       = serviciosSeleccionados.reduce((sum, s) => sum + s.precio, 0);
+    const tiempoTotal = serviciosSeleccionados.reduce((sum, s) => {
+        return sum + parseFloat(s.tempo || 0);
+    }, 0);
+    
     $("#cotizador-total").text("$" + total.toLocaleString('es-CO'));
     $("#servicios_book").val(JSON.stringify(serviciosSeleccionados));
+
+    // Formatear tiempo
+    const horas   = Math.floor(tiempoTotal);
+    const minutos = (tiempoTotal % 1) * 60;
+
+    let tiempoLabel = '';
+    if (horas > 0 && minutos > 0) {
+        tiempoLabel = `${horas}h ${minutos}min`;
+    } else if (horas > 0) {
+        tiempoLabel = `${horas}h`;
+    } else if (minutos > 0) {
+        tiempoLabel = `${minutos}min`;
+    } else {
+        tiempoLabel = '0 min';
+    }
+
+    $("#cotizador-tiempo").text(tiempoLabel);
+}
+
+
+//-----------------------------------------------------
+// Funciones para el modal de reprogramar
+//-----------------------------------------------------
+
+// Mostrar/ocultar paneles según selección
+document.getElementById('selectEstado').addEventListener('change', function () {
+    const val = this.value;
+    document.getElementById('contenedorMotivo').classList.toggle('d-none', val !== '2');
+    document.getElementById('contenedorReprogramar').classList.toggle('d-none', val !== '3');
+});
+
+// Función para obtener el ID de la mesa por nombre
+function getIdTableByName(nombre) {
+    return Object.keys(tablesDatabase).find(id => {
+        const obj = tablesDatabase[id][0];
+        return obj.especialista === nombre;
+    }) || null;
+}
+
+// Al abrir el modal, cargar datos de la reserva
+document.getElementById('modalCambiarEstado').addEventListener('show.bs.modal', function (e) {
+    const btn = e.relatedTarget;
+    if (!btn) return;
+
+    // Guardar referencia para bloquearHorasRepr
+    this._triggerBtn = btn;
+
+    const id           = btn.getAttribute('data-id');
+    const cliente      = btn.getAttribute('data-cliente');
+    const especialista = btn.getAttribute('data-especialista');
+    const fecha        = btn.getAttribute('data-fecha');
+    const hora         = btn.getAttribute('data-hora');
+    const idTable      = btn.getAttribute('data-id-table');
+
+    console.log(id, cliente, especialista, fecha, hora, idTable);
+    document.getElementById('modalReservationId').value = id;
+
+    document.getElementById('reprCliente').textContent      = cliente;
+    document.getElementById('reprEspecialista').textContent = especialista;
+    document.getElementById('reprFecha').textContent        = fecha;
+    document.getElementById('reprHora').textContent         = hora;
+
+    const hoy = new Date().toISOString().split('T')[0];
+    document.getElementById('reprNuevaFecha').min   = hoy;
+    document.getElementById('reprNuevaFecha').value = '';
+
+    poblarHorasRepr(idTable, fecha);
+
+    // Reset estado
+    document.getElementById('selectEstado').value = '';
+    document.getElementById('contenedorMotivo').classList.add('d-none');
+    document.getElementById('contenedorReprogramar').classList.add('d-none');
+});
+
+// Cuando cambia la nueva fecha, rebloquear horas ocupadas
+document.getElementById('reprNuevaFecha').addEventListener('change', function () {
+    const idTable = document.getElementById('modalCambiarEstado')
+        .querySelector('[data-bs-target="#modalCambiarEstado"]')?.getAttribute('data-id-table');
+    bloquearHorasRepr(this.value);
+});
+
+// Poblar el select de horas del reprogramador con las horas del especialista
+function poblarHorasRepr(idEspecialista, fechaActual) {
+    const select = document.getElementById('reprNuevaHora');
+    select.innerHTML = '<option value="">Seleccionar hora</option>';
+    //console.log("objeto completo:", tablesDatabase[24][0]);
+    //console.log("idTable encontrado:", idEspecialista);
+    if (!idEspecialista || !tablesDatabase[idEspecialista]) return;
+
+    const especialista = tablesDatabase[idEspecialista][0];
+    especialista.horas.forEach(hora => {
+        const label = new Date(`2000-01-01T${hora}:00`)
+            .toLocaleTimeString('es-CO', { hour: 'numeric', minute: '2-digit', hour12: true });
+        const opt = document.createElement('option');
+        opt.value = hora;
+        opt.textContent = label;
+        opt.setAttribute('data-label', label);
+        select.appendChild(opt);
+    });
+}
+
+// Bloquear horas ocupadas en el select del reprogramador
+function bloquearHorasRepr(fechaSeleccionada) {
+    const select = document.getElementById('reprNuevaHora');
+    const idTable = document.getElementById('modalCambiarEstado')
+        ._triggerBtn?.getAttribute('data-id-table');
+
+    // Reset
+    Array.from(select.options).forEach(opt => {
+        opt.disabled = false;
+        const original = opt.getAttribute('data-label');
+        if (original) opt.textContent = original;
+    });
+
+    if (!fechaSeleccionada) return;
+
+    const reservations = JSON.parse(document.getElementById('reservationsDatabase').value);
+    const nombreEspecialista = document.getElementById('reprEspecialista').textContent;
+
+    const reservasDelDia = (reservations[fechaSeleccionada] || [])
+        .filter(r => r.table === nombreEspecialista && String(r.confirmado) !== '2');
+
+    reservasDelDia.forEach(r => {
+        const minReserva = parseTime12(r.time);
+        Array.from(select.options).forEach(opt => {
+            if (!opt.value) return;
+            if (parseTime24(opt.value) === minReserva) {
+                opt.disabled = true;
+                opt.textContent += ' (ocupado)';
+            }
+        });
+    });
+
+    // Bloquear horas pasadas si es hoy
+    const hoy = new Date().toISOString().split('T')[0];
+    if (fechaSeleccionada === hoy) {
+        const minutosAhora = new Date().getHours() * 60 + new Date().getMinutes();
+        Array.from(select.options).forEach(opt => {
+            if (!opt.value) return;
+            if (parseTime24(opt.value) < minutosAhora) {
+                opt.disabled = true;
+                if (!opt.textContent.includes('(ocupado)')) opt.textContent += ' (no disponible)';
+            }
+        });
+    }
 }
 

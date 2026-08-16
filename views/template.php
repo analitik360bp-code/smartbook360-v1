@@ -289,6 +289,10 @@ $tip = 0.1;
 
 				include "pages/confirmacion/Cancel.php";
 
+			} elseif (isset($confirm[2]) && $confirm[2] == "reprogramar") {
+
+				include "pages/confirmacion/reprogramBook_Admin.php";
+
 			}
 		} else {
 			include "pages/login/login.php";

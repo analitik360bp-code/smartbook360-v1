@@ -22,6 +22,40 @@ if(!empty($routesArray[2])){
 	}
 }
 
+/*=============================================
+Reordenar columnas que terminan en _food
+=============================================*/
+
+// Separar las columnas _food de las demás
+$colsFood  = array_values(array_filter($module->columns, fn($col) => str_ends_with($col->title_column, '_food')));
+$colsOther = array_values(array_filter($module->columns, fn($col) => !str_ends_with($col->title_column, '_food')));
+
+// Definir el orden deseado para las columnas _food
+$ordenFood = [
+    'title_food',
+    'img_food',
+    'id_category_food',
+    'id_office_food',
+	'time_food',
+    'cost_food',
+    'utility_food',
+    'price_food',
+    'status_food',
+];
+
+// Ordenar $colsFood según $ordenFood
+usort($colsFood, function($a, $b) use ($ordenFood) {
+    $posA = array_search($a->title_column, $ordenFood);
+    $posB = array_search($b->title_column, $ordenFood);
+    // Si no está en el orden definido, va al final
+    if ($posA === false) $posA = 999;
+    if ($posB === false) $posB = 999;
+    return $posA - $posB;
+});
+
+// Reconstruir columns: primero las _food ordenadas, luego las demás
+$module->columns = array_merge($colsFood, $colsOther);
+
 
 /*=============================================
 Definiendo Bloques

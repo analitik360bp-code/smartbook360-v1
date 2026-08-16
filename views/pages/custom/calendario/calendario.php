@@ -28,19 +28,19 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
             $tablesbase = [
                 'id' => $val->id_table,
                 'estado' => $val->status_table,
-                'especialista' => $val->title_table,
-                'descripcion' => $val->description_table,
-                'imagen' => $val->image_table,
+                'especialista' => urldecode($val->title_table),
+                'descripcion' => urldecode($val->description_table),
+                'imagen' => urldecode($val->image_table),
                 'entrada' => $val->entrada_table,
                 'salida' => $val->salida_table,
-                'servicios' => $val->servicio_table,
+                'servicios' => urldecode($val->servicio_table),
                 'horas' => $horas
             ];
 
             $tablesDatabase[$val->id_table][] = $tablesbase;
 
         }
-
+        //echo "<pre>tablesDatabase: "; print_r($tablesDatabase); echo "</pre>";
     } else {
 
         $tables = array();
@@ -73,16 +73,18 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                 'customerClient' => $value->client_book,
                 'time' => TemplateController::formatDate(6, $value->time_book),
                 'table' => urldecode($value->title_table),
+                'idTable' => $value->id_table,
                 'phone' => $value->phone_book,
                 'confirmado' => $value->confirm_book,
                 'num_book' => $value->num_book,
-                'servicios' => $value->servicios_book
+                'date_book' => $value->date_book,
+                'servicios' => urldecode($value->servicios_book)
 
             ];
 
             $reservationsDatabase[$dateBook][] = $reservation;
         }
-       // echo "<pre>print_r(" . json_encode($reservationsDatabase) . ");</pre>";
+        // echo "<pre>print_r(" . json_encode($reservationsDatabase) . ");</pre>";
 
         $url_cancel = "motivos";
         $method_cancel = "GET";
@@ -225,7 +227,8 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                 <div class="modal-content">
                     <div class="modal-header reservation-header">
                         <h5 class="modal-title" id="modalNuevaReservaLabel">
-                            <i class="fas fa-calendar-alt me-2"></i>Nueva Reserva - <span id="modalFechaSeleccionada"></span>
+                            <i class="fas fa-calendar-alt me-2"></i>Nueva Reserva - <span
+                                id="modalFechaSeleccionada"></span>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -268,7 +271,8 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                                         <option value="">Seleccionar</option>
                                         <?php foreach ($tables as $key => $value): ?>
                                             <option value="<?php echo $value->id_table ?>">
-                                                <?php echo urldecode($value->title_table) ?></option>
+                                                <?php echo urldecode($value->title_table) ?>
+                                            </option>
                                         <?php endforeach ?>
                                     </select>
                                 </div>
@@ -291,6 +295,10 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                                         <span class="fw-bold">Total:</span>
                                         <span class="fw-bold fs-5" id="cotizador-total">$0</span>
                                     </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-1">
+                                        <span class="text-muted small">Tiempo estimado:</span>
+                                        <span class="text-muted small fw-medium" id="cotizador-tiempo">0 min</span>
+                                    </div>
                                 </div>
                                 <input type="hidden" id="servicios_book" name="servicios_book">
                             </div>
@@ -310,14 +318,13 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                             <i class="fas fa-times me-1"></i>Limpiar
                         </button>
                         <!--<button type="submit" class="btn btn-primary">Guardar Cambios</button>-->
-                        <button type="submit"  class="btn backColor reservation-btn-primary rounded"
-                            id="saveReservation">
+                        <button type="submit" class="btn backColor reservation-btn-primary rounded" id="saveReservation">
                             <i class="fas fa-save me-1"></i>Guardar Reserva
                         </button>
                         <?php
-                            require_once "controllers/books.controller.php";
-                            $books = new BooksController();
-                            $books->manageBooks();
+                        require_once "controllers/books.controller.php";
+                        $books = new BooksController();
+                        $books->manageBooks();
                         ?>
                     </div>
                 </div>
@@ -325,7 +332,7 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
         </div>
     </div>
 
-    
+
     <!-- Modal de Cotización -->
     <div class="modal fade" id="modalCotizacion" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -360,6 +367,7 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
             </div>
         </div>
     </div>
+
     <!-- Modal de Confirmar -->
     <div class="modal fade" id="modalCambiarEstado" tabindex="-1" aria-labelledby="modalCambiarEstadoLabel"
         aria-hidden="true">
@@ -379,6 +387,7 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                                 <option value="" disabled selected>-- Seleccionar acción --</option>
                                 <option value="1">Confirmar</option>
                                 <option value="2">Cancelar</option>
+                                <option value="3">Reprogramar</option>
                             </select>
                         </div>
 
@@ -391,15 +400,62 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                                 <?php endforeach; ?>
                             </select>
                         </div>
+                        <!-- Panel Reprogramar -->
+                        <div class="mb-3 d-none" id="contenedorReprogramar">
+                            <hr>
+                            <h6 class="text-muted mb-3"><i class="fas fa-calendar-alt me-1"></i>Datos actuales de la reserva
+                            </h6>
+
+                            <div class="card bg-light border-0 p-3 mb-3">
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">Cliente</small>
+                                        <strong id="reprCliente">—</strong>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">Especialista</small>
+                                        <strong id="reprEspecialista">—</strong>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">Fecha actual</small>
+                                        <strong id="reprFecha">—</strong>
+                                    </div>
+                                    <div class="col-6">
+                                        <small class="text-muted d-block">Hora actual</small>
+                                        <strong id="reprHora">—</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h6 class="text-muted mb-3"><i class="fas fa-edit me-1"></i>Nueva fecha y hora</h6>
+
+                            <div class="mb-3">
+                                <label class="form-label">Nueva Fecha *</label>
+                                <input type="date" class="form-control" id="reprNuevaFecha" name="nueva_fecha">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Nueva Hora *</label>
+                                <select class="form-select" id="reprNuevaHora" name="nueva_hora">
+                                    <option value="">Seleccionar hora</option>
+                                </select>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         <?php
-                        require_once "controllers/books.controller.php";
-                        $books = new BooksController();
-                        $books->confirmBook_Admin();
+                            if (isset($_POST['confirmado'])) {
+                                if ($_POST['confirmado'] == '3') {
+                                    $books->reprogramBook_Admin();
+                                } else {
+                                    $books->confirmBook_Admin();
+                                }
+                            }
                         ?>
+                      
 
                     </div>
                 </form>
