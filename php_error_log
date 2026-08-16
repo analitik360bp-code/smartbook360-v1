@@ -17,3 +17,11 @@ Stack trace:
 [16-Aug-2026 11:25:00 America/Bogota] PHP Warning:  Undefined array key 1 in C:\xampp\htdocs\reservas_1\cms\views\pages\dynamic\tables\tables.php on line 570
 [16-Aug-2026 11:25:00 America/Bogota] PHP Warning:  Undefined array key "" in C:\xampp\htdocs\reservas_1\cms\views\pages\dynamic\tables\tables.php on line 570
 [16-Aug-2026 12:04:36 America/Bogota] PHP Warning:  Attempt to read property "end_date_suscripcion" on string in C:\xampp\htdocs\reservas_1\cms\controllers\admins.controller.php on line 47
+[16-Aug-2026 15:19:51 America/Bogota] WhatsApp DEBUG - Phone original: Diego Gonzalez
+[16-Aug-2026 15:19:51 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[16-Aug-2026 15:19:51 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[16-Aug-2026 15:19:51 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[16-Aug-2026 15:19:51 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* Diego Gonzalez\n\ud83d\udcc5 *Fecha:* 18\/8\/2026\n\ud83d\udd50 *Hora:* 11:00\n\ud83d\udc86 *Especialista:* Prueba 1\n\ud83d\udd22 *N\u00b0 Reserva:* #8181786911591\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[16-Aug-2026 15:19:54 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[16-Aug-2026 15:19:54 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[16-Aug-2026 15:19:54 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSRDlFMEMyNkEwNzc4MzczRjIzAA=="}]}

@@ -47,15 +47,16 @@ if ($pages->status == 200) {
 	<ul class="list-group list-group-flush" id="sortable">
 
 		<?php if (!empty($pages)): ?>
-			<a class="bg-transparent text-dark" href="/gestionar">
+			<li class="list-group-item list-group-item-action position-relative">
+				<a class="bg-transparent text-dark" href="/gestionar">
 
-				<i class="fa-solid fa-street-view textColor"></i>
-				<span class="menu-text">
-					Gestionar
-				</span>
+					<i class="fa-solid fa-street-view textColor"></i>
+					<span class="menu-text">
+						Gestionar
+					</span>
 
-			</a>
-
+				</a>
+			</li>
 			<?php foreach ($pages as $key => $value): ?>
 
 				<?php if (isset($_SESSION["admin"])): ?>
