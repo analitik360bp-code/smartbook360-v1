@@ -197,11 +197,7 @@ $(document).ready(function () {
         modalReserva.show();
 
         window.onerror = function(msg, src, line) {
-    document.body.insertAdjacentHTML('afterbegin', 
-        `<div style="background:red;color:white;padding:10px;font-size:12px;z-index:9999;position:fixed;top:0;left:0;right:0">
-            ERROR: ${msg} | Línea: ${line}
-        </div>`
-    );
+    
 };
 
     }
@@ -288,9 +284,7 @@ $(document).ready(function () {
                                     ? '<span class="badge bg-danger">Cancelada</span>'
                                     : `
                             <button type="button" 
-                                class="btn btn-sm p-0 border-0 alignment-baseline" 
-                                data-bs-toggle="modal" 
-                                data-bs-target="#modalCambiarEstado" 
+                                class="btn btn-sm p-0 border-0 alignment-baseline btn-gestionar-reserva" 
                                 data-id="${reservation.num_book}"
                                 data-cliente="${reservation.customerClient}"
                                 data-especialista="${reservation.table}"
@@ -320,23 +314,7 @@ $(document).ready(function () {
     // 1. Capturamos el elemento del modal
 const modalCambiarEstado = document.getElementById('modalCambiarEstado');
 
-// 2. Escuchamos el evento que se dispara justo antes de que el modal se muestre en pantalla
-modalCambiarEstado.addEventListener('show.bs.modal', function (event) {
-    // 'event.relatedTarget' es el botón exacto que el usuario presionó
-    const botonQueDisparoElModal = event.relatedTarget;
-    
-    // Extraemos el valor del atributo 'data-id' (que contiene el num_book)
-    const reservationId = botonQueDisparoElModal.getAttribute('data-id');
-    
-    // Buscamos el input hidden dentro del modal
-    const inputHidden = modalCambiarEstado.querySelector('#modalReservationId');
-    
-    // Le asignamos el num_book al atributo 'value' del input oculto
-    inputHidden.value = reservationId;
 
-    // (Opcional) Si quieres verificar en la consola del navegador que se asignó bien:
-    console.log("ID de reserva cargado en el modal:", inputHidden.value);
-});
 
 const selectEstado = document.getElementById('selectEstado');
 const contenedorMotivo = document.getElementById('contenedorMotivo');
@@ -356,16 +334,6 @@ selectEstado.addEventListener('change', function() {
     }
 });
 
-// RECOMENDACIÓN: Resetear todo cuando el modal se vuelva a abrir
-modalCambiarEstado.addEventListener('show.bs.modal', function (event) {
-    // ... tu código anterior para asignar el id ...
-    
-    // Dejar los selects como al principio cada vez que se abra el modal
-    selectEstado.value = "";
-    contenedorMotivo.classList.add('d-none');
-    selectMotivo.removeAttribute('required');
-    selectMotivo.value = "";
-});
 
 
     /*=============================================
@@ -791,40 +759,7 @@ function getIdTableByName(nombre) {
     }) || null;
 }
 
-// Al abrir el modal, cargar datos de la reserva
-document.getElementById('modalCambiarEstado').addEventListener('show.bs.modal', function (e) {
-    const btn = e.relatedTarget;
-    if (!btn) return;
 
-    // Guardar referencia para bloquearHorasRepr
-    this._triggerBtn = btn;
-
-    const id           = btn.getAttribute('data-id');
-    const cliente      = btn.getAttribute('data-cliente');
-    const especialista = btn.getAttribute('data-especialista');
-    const fecha        = btn.getAttribute('data-fecha');
-    const hora         = btn.getAttribute('data-hora');
-    const idTable      = btn.getAttribute('data-id-table');
-
-    console.log(id, cliente, especialista, fecha, hora, idTable);
-    document.getElementById('modalReservationId').value = id;
-
-    document.getElementById('reprCliente').textContent      = cliente;
-    document.getElementById('reprEspecialista').textContent = especialista;
-    document.getElementById('reprFecha').textContent        = fecha;
-    document.getElementById('reprHora').textContent         = hora;
-
-    const hoy = new Date().toISOString().split('T')[0];
-    document.getElementById('reprNuevaFecha').min   = hoy;
-    document.getElementById('reprNuevaFecha').value = '';
-
-    poblarHorasRepr(idTable, fecha);
-
-    // Reset estado
-    document.getElementById('selectEstado').value = '';
-    document.getElementById('contenedorMotivo').classList.add('d-none');
-    document.getElementById('contenedorReprogramar').classList.add('d-none');
-});
 
 // Cuando cambia la nueva fecha, rebloquear horas ocupadas
 document.getElementById('reprNuevaFecha').addEventListener('change', function () {
@@ -899,3 +834,42 @@ function bloquearHorasRepr(fechaSeleccionada) {
     }
 }
 
+
+
+//--Al final del archivo, después de todo el código existente:
+// ── Listener único para abrir modalCambiarEstado ──
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.btn-gestionar-reserva');
+    if (!btn) return;
+
+    const id           = btn.getAttribute('data-id');
+    const cliente      = btn.getAttribute('data-cliente');
+    const especialista = btn.getAttribute('data-especialista');
+    const fecha        = btn.getAttribute('data-fecha');
+    const hora         = btn.getAttribute('data-hora');
+    const idTable      = btn.getAttribute('data-id-table');
+
+    // Guardar referencia para bloquearHorasRepr
+    document.getElementById('modalCambiarEstado')._triggerBtn = btn;
+
+    document.getElementById('modalReservationId').value = id;
+    document.getElementById('reprCliente').textContent       = cliente;
+    document.getElementById('reprEspecialista').textContent  = especialista;
+    document.getElementById('reprFecha').textContent         = fecha;
+    document.getElementById('reprHora').textContent          = hora;
+
+    const hoy = new Date().toISOString().split('T')[0];
+    document.getElementById('reprNuevaFecha').min   = hoy;
+    document.getElementById('reprNuevaFecha').value = '';
+
+    poblarHorasRepr(idTable, fecha);
+
+    // Reset estado
+    document.getElementById('selectEstado').value = '';
+    document.getElementById('selectMotivo').value = '';
+    document.getElementById('selectMotivo').removeAttribute('required');
+    document.getElementById('contenedorMotivo').classList.add('d-none');
+    document.getElementById('contenedorReprogramar').classList.add('d-none');
+
+    new bootstrap.Modal(document.getElementById('modalCambiarEstado')).show();
+});

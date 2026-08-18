@@ -27,3 +27,12 @@ Stack trace:
 [16-Aug-2026 15:19:54 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSRDlFMEMyNkEwNzc4MzczRjIzAA=="}]}
 [18-Aug-2026 12:04:19 America/Bogota] PHP Warning:  Undefined array key "id_table_book" in C:\xampp\htdocs\reservas_1\cms\controllers\books.controller.php on line 281
 [18-Aug-2026 12:04:44 America/Bogota] PHP Warning:  Undefined array key "id_table_book" in C:\xampp\htdocs\reservas_1\cms\controllers\books.controller.php on line 281
+[18-Aug-2026 15:58:59 America/Bogota] WhatsApp DEBUG - Phone original: Diego Gonzalez
+[18-Aug-2026 15:58:59 America/Bogota] WhatsApp DEBUG - Phone formateado: 573103270808
+[18-Aug-2026 15:58:59 America/Bogota] WhatsApp DEBUG - Phone ID: 1132585386585238
+[18-Aug-2026 15:58:59 America/Bogota] WhatsApp DEBUG - URL: https://graph.facebook.com/v25.0/1132585386585238/messages
+[18-Aug-2026 15:58:59 America/Bogota] WhatsApp DEBUG - Body: {"messaging_product":"whatsapp","to":"573103270808","type":"text","text":{"body":"\u2705 *Confirmaci\u00f3n de Reserva*\n\n\ud83d\udc64 *Cliente:* Diego Gonzalez\n\ud83d\udcc5 *Fecha:* 20\/8\/2026\n\ud83d\udd50 *Hora:* 16:00\n\ud83d\udc86 *Especialista:* Prueba 1\n\ud83d\udd22 *N\u00b0 Reserva:* #9661787086738\n\nSi necesitas cancelar o modificar tu cita, comun\u00edcate con nosotros.\n\u00a1Te esperamos! \ud83d\ude4f"}}
+[18-Aug-2026 15:59:02 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
+[18-Aug-2026 15:59:02 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
+[18-Aug-2026 15:59:02 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSRUUyQzE4OTlEMzEwNjQ0QjA0AA=="}]}
+[18-Aug-2026 15:59:34 America/Bogota] PHP Warning:  Undefined array key "id_table_book" in C:\xampp\htdocs\reservas_1\cms\controllers\books.controller.php on line 281
