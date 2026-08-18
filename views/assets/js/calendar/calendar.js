@@ -196,6 +196,14 @@ $(document).ready(function () {
         const modalReserva = new bootstrap.Modal(document.getElementById('modalNuevaReserva'));
         modalReserva.show();
 
+        window.onerror = function(msg, src, line) {
+    document.body.insertAdjacentHTML('afterbegin', 
+        `<div style="background:red;color:white;padding:10px;font-size:12px;z-index:9999;position:fixed;top:0;left:0;right:0">
+            ERROR: ${msg} | Línea: ${line}
+        </div>`
+    );
+};
+
     }
 
     /*=============================================

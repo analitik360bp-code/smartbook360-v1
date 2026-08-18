@@ -25,3 +25,5 @@ Stack trace:
 [16-Aug-2026 15:19:54 America/Bogota] WhatsApp DEBUG - HTTP Code: 200
 [16-Aug-2026 15:19:54 America/Bogota] WhatsApp DEBUG - cURL Error: ninguno
 [16-Aug-2026 15:19:54 America/Bogota] WhatsApp DEBUG - Response: {"messaging_product":"whatsapp","contacts":[{"input":"573103270808","wa_id":"573103270808"}],"messages":[{"id":"wamid.HBgMNTczMTAzMjcwODA4FQIAERgSRDlFMEMyNkEwNzc4MzczRjIzAA=="}]}
+[18-Aug-2026 12:04:19 America/Bogota] PHP Warning:  Undefined array key "id_table_book" in C:\xampp\htdocs\reservas_1\cms\controllers\books.controller.php on line 281
+[18-Aug-2026 12:04:44 America/Bogota] PHP Warning:  Undefined array key "id_table_book" in C:\xampp\htdocs\reservas_1\cms\controllers\books.controller.php on line 281

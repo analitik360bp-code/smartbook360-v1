@@ -368,3 +368,8 @@
 }
 .tarjeta-btn:disabled { opacity: .5; cursor: not-allowed; }
 .tarjeta-btn:not(:disabled):hover { background: #f0f0f0; }
+
+#modalCambiarEstado .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+}

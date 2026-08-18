@@ -222,7 +222,7 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
     <!-- ===================== MODAL DE RESERVA ===================== -->
     <div class="modal fade" id="modalNuevaReserva" tabindex="-1" aria-labelledby="modalNuevaReservaLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-dialog modal-lg">
             <form id="reservationForm" method="POST">
                 <div class="modal-content">
                     <div class="modal-header reservation-header">
