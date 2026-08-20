@@ -737,6 +737,12 @@ function actualizarTotal() {
     }
 
     $("#cotizador-tiempo").text(tiempoLabel);
+
+    if (tiempoTotal > 1) {
+        $("#alerta-tiempo").removeClass("d-none");
+    } else {
+        $("#alerta-tiempo").addClass("d-none");
+    }
 }
 
 

@@ -138,7 +138,6 @@ if(isset($_POST["method"])){
 
 	$ajax = new CheckoutController();
 	$ajax -> subtotal = $_POST["subtotal"];
-    $ajax -> tax = $_POST["tax"];
     $ajax -> total = $_POST["total"];
     $ajax -> tip = $_POST["tip"];
     $ajax -> idOrder = $_POST["idOrder"];

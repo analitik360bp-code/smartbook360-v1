@@ -299,6 +299,10 @@ if ($_SESSION["admin"]->id_office_admin > 0) {
                                         <span class="text-muted small">Tiempo estimado:</span>
                                         <span class="text-muted small fw-medium" id="cotizador-tiempo">0 min</span>
                                     </div>
+
+                                    <div id="alerta-tiempo" class="alert alert-warning mt-2 mb-0 p-2 small d-none" role="alert">
+                                        <strong>Nota:</strong> Cuando el tiempo estimado del servicio exceda 60 minutos (1 Hora), tener en cuenta las agendas en los horarios siguientes.
+                                    </div>
                                 </div>
                                 <input type="hidden" id="servicios_book" name="servicios_book">
                             </div>

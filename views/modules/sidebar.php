@@ -52,7 +52,7 @@ if ($pages->status == 200) {
 
 					<i class="fa-solid fa-street-view textColor"></i>
 					<span class="menu-text">
-						Gestionar
+						Facturación
 					</span>
 
 				</a>

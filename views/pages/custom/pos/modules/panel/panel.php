@@ -60,9 +60,7 @@
     </div>
 
     <div class="order-actions">
-      <button class="btn btn-success btn-lg w-100 mb-2" id="submit-order" idOrder="<?php echo isset($idOrder) ? $idOrder : "" ?>">
-        <i class="bi bi-check-circle"></i> Enviar Orden
-      </button>
+
 
       <?php if (isset($processOrder) && $processOrder == "Ordenando"): ?>
         <button class="btn btn-dark w-100" id="clear-order">

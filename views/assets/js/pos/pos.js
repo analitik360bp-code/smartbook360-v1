@@ -1,33 +1,33 @@
-$(function(){
+$(function () {
 
   let orderItems = {};
   let orderTotal = 0;
   let processOrder = $("#transactionOrder").attr("processOrder");
   let goContinue = false;
 
-  if(processOrder != "Entregada"){
+  if (processOrder != "Entregada") {
 
     goContinue = true;
-  
+
   }
 
   /*=============================================
   Cargar items de venta
   =============================================*/
 
-  if($(".order-item").length > 0){
+  if ($(".order-item").length > 0) {
 
     const order_item = $(".order-item");
 
-    order_item.each((i)=>{
+    order_item.each((i) => {
 
       orderItems[$(order_item[i]).data("id")] = {
-          
-          id:$(order_item[i]).data("id"),
-          order:$("#transactionOrder").attr("idOrder"),
-          name: $(order_item[i]).data("name"),
-          price: Number($(order_item[i]).data("price"))/Number($(order_item[i]).data("qty")),
-          quantity: $(order_item[i]).data("qty")
+
+        id: $(order_item[i]).data("id"),
+        order: $("#transactionOrder").attr("idOrder"),
+        name: $(order_item[i]).data("name"),
+        price: Number($(order_item[i]).data("price")) / Number($(order_item[i]).data("qty")),
+        quantity: $(order_item[i]).data("qty")
       }
 
     })
@@ -40,16 +40,16 @@ $(function(){
   Capturar notas
   =============================================*/
 
-  $(document).on("change","#note_order",function(){
+  $(document).on("change", "#note_order", function () {
 
-      updateOrderDisplay();
-      fncToastr("success", "Notas Modificadas");
+    updateOrderDisplay();
+    fncToastr("success", "Notas Modificadas");
   })
 
   /*=============================================
   Tabular categorías
   =============================================*/
-  $(document).on('click', '.category-tab', function() {
+  $(document).on('click', '.category-tab', function () {
 
     $('.category-tab').removeClass('active');
     $('.menu-category').removeClass('active');
@@ -66,7 +66,7 @@ $(function(){
    Click para agregar item del menú
   =============================================*/
 
-  if(goContinue){
+  if (goContinue) {
 
     $(document).on("click", ".menu-item", function () {
 
@@ -88,27 +88,30 @@ $(function(){
 
   function addToOrder(itemId, itemName, itemPrice) {
 
-    if(!goContinue){
+    if (!goContinue) {
       return;
     }
-    
-    if(orderItems[itemId]) {
-     
+
+    if (orderItems[itemId]) {
+
       orderItems[itemId].quantity += 1;
 
-    }else{
+    } else {
 
       orderItems[itemId] = {
-          name: itemName,
-          price: itemPrice,
-          quantity: 1
+        name: itemName,
+        price: itemPrice,
+        quantity: 1
       };
 
     }
 
     updateOrderDisplay();
     fncToastr("success", `${itemName} adicionad@ a la orden`);
-  
+    setTimeout(function () {
+      window.location.reload();
+    }, 900);
+
   }
 
   /*=============================================
@@ -133,15 +136,15 @@ $(function(){
 
       $("#note_order").val("");
 
-      arrayItems = [{"order":0, "note":""}];
+      arrayItems = [{ "order": 0, "note": "" }];
       arrayItems[0].order = $("#transactionOrder").attr("idOrder");
       arrayItems[0].note = $("#note_order").val();
 
     }
 
-    
 
-    $.each(orderItems, function(itemId, item) {
+
+    $.each(orderItems, function (itemId, item) {
 
       html += `
         <div class="order-item" data-id="${itemId}">
@@ -171,7 +174,7 @@ $(function(){
       item.note = $("#note_order").val();
 
       arrayItems.push(item);
-     
+
     })
 
     $container.html(html);
@@ -183,49 +186,49 @@ $(function(){
     =============================================*/
 
     var data = new FormData();
-    data.append("items_sale",JSON.stringify(arrayItems));
-    data.append("id_admin",$("#idAdmin").val());
-    data.append("id_office",$("#idOffice").val());
+    data.append("items_sale", JSON.stringify(arrayItems));
+    data.append("id_admin", $("#idAdmin").val());
+    data.append("id_office", $("#idOffice").val());
     data.append("token", localStorage.getItem("tokenAdmin"));
 
-     $.ajax({
-        url:"/ajax/pos.ajax.php",
-        method: "POST",
-        data: data,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function (response){
-          
-           console.log("response", response);
-        
-        }
+    $.ajax({
+      url: "/ajax/pos.ajax.php",
+      method: "POST",
+      data: data,
+      contentType: false,
+      cache: false,
+      processData: false,
+      success: function (response) {
 
-      })
+        console.log("response", response);
+
+      }
+
+    })
 
 
   }
 
- /*=============================================
-  Actualizar totales
-  =============================================*/
+  /*=============================================
+   Actualizar totales
+   =============================================*/
 
   function updateTotals() {
-    
+
     let subtotal = 0;
-    
-    $.each(orderItems, function(_id, item) {
+
+    $.each(orderItems, function (_id, item) {
       subtotal += item.price * item.quantity;
     });
 
     let orderItemFinish = $(".order-item-finish");
 
-    if(orderItemFinish.length > 0){
+    if (orderItemFinish.length > 0) {
 
-      orderItemFinish.each((i)=>{
+      orderItemFinish.each((i) => {
 
         subtotal += Number($(orderItemFinish[i]).attr("data-price"));
-       
+
       })
 
     }
@@ -254,7 +257,7 @@ $(function(){
 
       orderItems[itemId].quantity += 1;
       updateOrderDisplay()
-    
+
     }
 
   })
@@ -263,7 +266,7 @@ $(function(){
   Disminuir cantidad
   =============================================*/
 
-  $(document).on('click', '.decrease-qty', function(e) {
+  $(document).on('click', '.decrease-qty', function (e) {
 
     e.preventDefault();
 
@@ -276,15 +279,15 @@ $(function(){
       orderItems[itemId].quantity -= 1;
       updateOrderDisplay();
 
-    }else{
+    } else {
 
-      fncSweetAlert("confirm", "¿Está seguro de remover este item?", "").then(resp=>{
+      fncSweetAlert("confirm", "¿Está seguro de remover este item?", "").then(resp => {
 
-        if(resp){
+        if (resp) {
 
           delete orderItems[itemId];
           updateOrderDisplay();
-        
+
         }
 
       })
@@ -300,23 +303,23 @@ $(function(){
 
     e.preventDefault();
 
-    fncSweetAlert("confirm", "¿Está seguro de remover este item?", "").then(resp=>{
+    fncSweetAlert("confirm", "¿Está seguro de remover este item?", "").then(resp => {
 
-      if(resp){
+      if (resp) {
 
 
         const itemId = $(this).closest(".order-item").data("id");
 
         if (orderItems[itemId]) {
-            
+
           delete orderItems[itemId];
-          
+
           updateOrderDisplay();
 
           fncToastr("success", "Item removido de la orden");
 
         }
-      
+
       }
 
     })
@@ -326,20 +329,20 @@ $(function(){
   /*=============================================
   Limpiar el pedido
   =============================================*/
-  $('#clear-order').on('click', function() {
-    
+  $('#clear-order').on('click', function () {
+
     if (Object.keys(orderItems).length === 0) return;
 
-    fncSweetAlert("confirm", "¿Borrar todos los items de este pedido?", "").then(resp=>{
+    fncSweetAlert("confirm", "¿Borrar todos los items de este pedido?", "").then(resp => {
 
-      if(resp){
+      if (resp) {
 
         clearOrder();
 
       }
 
     })
-  
+
   });
 
   /*=============================================
@@ -347,7 +350,7 @@ $(function(){
   =============================================*/
 
   function clearOrder() {
-    
+
     orderItems = {};
     updateOrderDisplay();
     $('#note_order').val('');
@@ -365,34 +368,34 @@ $(function(){
       return;
     }
 
-    fncSweetAlert("confirm", "¿Enviar esta orden a En Servicio?", "").then(resp=>{
+    fncSweetAlert("confirm", "¿Enviar esta orden a En Servicio?", "").then(resp => {
 
-      if(resp){
+      if (resp) {
 
         /*=============================================
         Actualizar proceso de la orden
         =============================================*/
         var data = new FormData();
 
-        data.append("id_order",$(this).attr("idOrder"));
-        data.append("process_order","Preparando");
+        data.append("id_order", $(this).attr("idOrder"));
+        data.append("process_order", "Preparando");
         data.append("token", localStorage.getItem("tokenAdmin"));
 
         $.ajax({
-          url:"/ajax/pos.ajax.php",
+          url: "/ajax/pos.ajax.php",
           method: "POST",
           data: data,
           contentType: false,
           cache: false,
           processData: false,
-          success: function (response){
+          success: function (response) {
 
-            if(response == 200){
+            if (response == 200) {
 
               fncToastr("success", "Orden enviada a En Servicio");
 
             }
-          
+
           }
 
         })
@@ -408,7 +411,7 @@ $(function(){
   Cambiar estado del pedido
   =============================================*/
 
-  $(document).on("click",".changeProcessItem",function(){
+  $(document).on("click", ".changeProcessItem", function () {
 
     /*=============================================
     Actualizar proceso de los items
@@ -417,31 +420,31 @@ $(function(){
     var elem = $(this);
 
     var data = new FormData();
-    data.append("id_sale",$(this).attr("idSale"));
-    data.append("process_sale","Entregada");
-    data.append("id_office",$("#idOffice").val());
+    data.append("id_sale", $(this).attr("idSale"));
+    data.append("process_sale", "Entregada");
+    data.append("id_office", $("#idOffice").val());
     data.append("token", localStorage.getItem("tokenAdmin"));
 
     $.ajax({
-      url:"/ajax/pos.ajax.php",
+      url: "/ajax/pos.ajax.php",
       method: "POST",
       data: data,
       contentType: false,
       cache: false,
       processData: false,
-      success: function (response){
+      success: function (response) {
 
-        if(response == 200){
+        if (response == 200) {
 
           $(elem).removeClass("bg-light");
           $(elem).addClass("bg-info");
           $(elem).html(`<i class="fa-solid fa-check"></i>`);
 
           fncToastr("success", "Item listo para entregar");
-        
-        }else{
 
-           fncToastr("error", ` "${response}" para ser preparado`);
+        } else {
+
+          fncToastr("error", ` "${response}" para ser preparado`);
         }
 
       }
@@ -455,38 +458,38 @@ $(function(){
   =            Eliminar Orden            =
   ======================================*/
 
-  $(document).on("click",".deleteOrder",function(){
-    
-    if($(this).attr("processOrder") != "Ordenando"){
-      
+  $(document).on("click", ".deleteOrder", function () {
+
+    if ($(this).attr("processOrder") != "Ordenando") {
+
       fncToastr("error", `Esta orden no se puede eliminar`);
-      
+
       return;
-      
+
     }
-    
-    fncSweetAlert("confirm", "¿Está seguro de eliminar esta orden?", "").then(resp=>{
-      
-      if(resp){
-        
+
+    fncSweetAlert("confirm", "¿Está seguro de eliminar esta orden?", "").then(resp => {
+
+      if (resp) {
+
         var data = new FormData();
-        data.append("id_order_delete",$(this).attr("idOrder"));
-        data.append("id_table_delete",$(this).attr("idTable"));
+        data.append("id_order_delete", $(this).attr("idOrder"));
+        data.append("id_table_delete", $(this).attr("idTable"));
         data.append("token", localStorage.getItem("tokenAdmin"));
-        
+
         $.ajax({
-          url:"/ajax/pos.ajax.php",
+          url: "/ajax/pos.ajax.php",
           method: "POST",
           data: data,
           contentType: false,
           cache: false,
           processData: false,
-          success: function (response){
+          success: function (response) {
             console.log(response);
-            
-            if(response == 200){
 
-              fncSweetAlert("success", "Orden eliminada con éxito", setTimeout(function(){ window.location = "/gestionar" },1250));
+            if (response == 200) {
+
+              fncSweetAlert("success", "Orden eliminada con éxito", setTimeout(function () { window.location = "/gestionar" }, 1250));
               console.log("Orden eliminada con éxito");
             }
 
@@ -499,5 +502,5 @@ $(function(){
     })
 
   })
-    
+
 });

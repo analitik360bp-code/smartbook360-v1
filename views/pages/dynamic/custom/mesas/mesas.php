@@ -74,7 +74,7 @@ if($_SESSION["admin"]->id_office_admin > 0){
 	      <h3 class="card-title">Gestión de Especialistas</h3>
 	      <div class="d-flex align-items-center">
 	        <i class="fa-solid fa-chair me-2"></i>
-	        <span class="badge bg-secondary"><?php echo $notFree ?>/<?php echo count($tables) ?> Especialistas ocupados</span>
+	        <span class="badge bg-secondary"><?php echo $notFree ?>/<?php echo count($tables) ?> Especialistas en proceso de pago</span>
 	      </div>
 	    </div>
 
@@ -90,16 +90,12 @@ if($_SESSION["admin"]->id_office_admin > 0){
 	              </div>
 	              <div class="d-flex align-items-center">
 	                <div class="legend-dot bg-warning me-2"></div>
-	                <span class="small">Ocupada</span>
+	                <span class="small">En Proceso de pago</span>
 	              </div>
 	              <div class="d-flex align-items-center">
 	                <div class="legend-dot bg-info me-2"></div>
 	                <span class="small">Pagando</span>
-	              </div>
-	              <div class="d-flex align-items-center">
-	                <div class="legend-dot bg-purple me-2"></div>
-	                <span class="small">Reservada</span>
-	              </div>
+	              </div>	              
 	            </div>
 	          </div>
 	        </div>
@@ -152,9 +148,7 @@ if($_SESSION["admin"]->id_office_admin > 0){
 			          <?php if ($value->status_table == "pagando"): ?>
 			          	table-waiting
 			          <?php endif ?>
-			          <?php if ($value->status_table == "reservada"): ?>
-			          	table-reserved
-			          <?php endif ?>
+			          
 			           ">
 			            <div class="table-header">
 			              <h5 class="table-number">
@@ -166,13 +160,10 @@ if($_SESSION["admin"]->id_office_admin > 0){
 			                   Libre
 			                 <?php endif ?>
 			                 <?php if ($value->status_table == "ocupada"): ?>
-			                   Ocupada
+			                   En Proceso de pago
 			                 <?php endif ?>
 			                 <?php if ($value->status_table == "pagando"): ?>
 			                   Pagando
-			                 <?php endif ?>
-			                 <?php if ($value->status_table == "reservada"): ?>
-			                  Reservada
 			                 <?php endif ?>
 
 			                </span>

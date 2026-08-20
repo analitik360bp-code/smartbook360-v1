@@ -64,7 +64,14 @@ $(document).on("change",".changeUtilityFood_", function(){
 	var cost = $("#cost_food").val();
 	var utility = $("#utility_food").val();
 
-	$("#price_food").val((Number(cost)+ (Number(cost)*(Number(utility)/100))).toFixed(2));
+	//$("#price_food").val((Number(cost)+ (Number(cost)*(Number(utility)/100))).toFixed(2));
+	//costo/(1-utility/100)
+	//$("#price_food").val(((Number(cost)/(1-Number(utility)/100))).toFixed(0));
+
+	console.log((Number(cost) / (1 - Number(utility) / 100)).toFixed(2));
+
+	$("#price_food").val( Math.round((Number(cost) / (1 - Number(utility) / 100)) / 100) * 100 );
+
 
 	
 })
